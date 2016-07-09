@@ -4,6 +4,7 @@ class ExperiencesController < ApplicationController
 
   def index
     @experiences = Experience.order(created_at: :desc)
+    @experience = Experience.new
   end
 
   def new
@@ -15,11 +16,12 @@ class ExperiencesController < ApplicationController
 
   def create
     @experience = Experience.new experience_params
+    @experiences = Experience.order(created_at: :desc)
     # @experience.user = current_user
     if @experience.save
       redirect_to experiences_path
     else
-      render :new
+      render :index
     end
   end
 

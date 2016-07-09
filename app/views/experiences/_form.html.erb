@@ -5,7 +5,6 @@
     <%= f.input :job_title %>
     <%= f.input :company %>
     <%= f.input :start_date %>
-    <%#= f.input :end_date %>
     <%= f.input :end_date, {include_blank: true, default: nil} %>
     <%= f.label :current %>
     <%= f.check_box :current, as: :boolean, checked_value: true, unchecked_value: false %>
