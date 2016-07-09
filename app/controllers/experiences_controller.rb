@@ -3,6 +3,7 @@ class ExperiencesController < ApplicationController
   before_action :find_experience, only: [:show, :edit, :update, :destroy]
 
   def index
+    @experiences = Experience.order(created_at: :desc)
   end
 
   def new
@@ -14,25 +15,34 @@ class ExperiencesController < ApplicationController
 
   def create
     @experience = Experience.new experience_params
-    @experience.user = current_user
-    @experience.save
+    # @experience.user = current_user
+    if @experience.save
+      redirect_to experiences_path
+    else
+      render :new
+    end
   end
 
   def edit
   end
 
   def update
-    @experience.update experience_params
+    if @experience.update experience_params
+      redirect_to experiences_path
+    else
+      render :edit
+    end
   end
 
   def destroy
     @experience.destroy
+    redirect_to experiences_path
   end
 
   private
 
   def experience_params
-    params.require(:experience).permit(:title, :company, :start_date, :end_date, :current, :description)
+    params.require(:experience).permit(:job_title, :company, :start_date, :end_date, :current, :description)
   end
 
   def find_experience
