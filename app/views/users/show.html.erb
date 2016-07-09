@@ -1,5 +1,9 @@
-<h1>Account Info</h1>
-
-<p>First Name: <%= @user.first_name %></p>
-<p>Last Name: <%= @user.last_name %></p>
-<p>Email: <%= @user.email %></p>
+<div class="container">
+  <div class="avatar" style="">
+    <%#= image_tag @user.profile.avatar %>
+  </div>
+  <div class="name-pitch">
+    <h2><%= @user.full_name %></h2>
+    <p><%= @user %></p>      
+  </div>
+</div>
