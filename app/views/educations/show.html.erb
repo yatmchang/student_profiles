@@ -1,0 +1,11 @@
+<section>
+  <div class="show">
+<h4><p><%= image_tag @education.logo.url(:thumb) %>&nbsp;<%= @education.school %></h4>
+<p>Summary: <%= @education.description %></p>
+<p>Links: <a><%= @education.link %></a> </p>
+
+<%= link_to "Edit", edit_education_path(@education) %>
+<%= link_to "Delete", education_path(@education), method: :delete,
+data:   {confirm: "Are you sure?"} %>
+</div>
+</section>

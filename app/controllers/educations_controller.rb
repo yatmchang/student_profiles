@@ -31,15 +31,22 @@ class EducationsController < ApplicationController
 
 
   def destroy
+    @education.destroy
+    redirect_to new_education_path, notice: "Your education information has been deleted"
   end
 
   def update
+    if @education.update education_params
+      redirect_to education_path(@education), notice: "Your information has been updated"
+    else
+      render :edit
+    end
   end
 
   private
 
   def education_params
-    params.require(:education).permit(:title, :description, :logo, :link)
+    params.require(:education).permit(:school, :description, :logo, :link)
   end
 
   def find_education
