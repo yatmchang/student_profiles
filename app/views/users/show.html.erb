@@ -44,7 +44,7 @@
   </div>
   <div id="education" class="tab-pane fade">
     <% @educations.each do |education| %>
-    <%= link_to education.title,education_path(education) %>
+    <%= link_to education.school,education_path(education) %>
     <hr>
     <% end %>
   </div>
