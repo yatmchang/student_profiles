@@ -9,6 +9,11 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
+  def user_signed_in?
+    session[:user_id].present?
+  end
+  helper_method :user_signed_in?
+
   def sign_in(user)
     session[:user_id] = user.id
   end
