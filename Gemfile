@@ -1,10 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'simple_form'
-gem "bootstrap-sass"
-gem "quiet_assets"
-gem 'carrierwave'
-gem "mini_magick"
+
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use postgresql as the database for Active Record
@@ -19,7 +17,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 
-gem 'quiet_assets'
+
 gem 'carrierwave'
 gem 'friendly_id'
 gem 'simple_form'
