@@ -11,11 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20160709184059) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "educations", force: :cascade do |t|
+    t.string   "school"
+    t.text     "description"
+    t.string   "logo"
+    t.string   "link"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.date     "start_date"
+    t.date     "end_date"
+    t.boolean  "current",     default: false
+  end
 
   create_table "links", force: :cascade do |t|
     t.string   "title"
@@ -35,6 +46,13 @@ ActiveRecord::Schema.define(version: 20160709184059) do
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
 
+  create_table "skills", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -48,23 +66,4 @@ ActiveRecord::Schema.define(version: 20160709184059) do
 
   add_foreign_key "links", "profiles"
   add_foreign_key "profiles", "users"
-  create_table "educations", force: :cascade do |t|
-    t.string   "school"
-    t.text     "description"
-    t.string   "logo"
-    t.string   "link"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.date     "start_date"
-    t.date     "end_date"
-    t.boolean  "current",     default: false
-  end
-
-  create_table "skills", force: :cascade do |t|
-    t.string   "title"
-    t.integer  "rating"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
 end
