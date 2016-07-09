@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160709200625) do
+ActiveRecord::Schema.define(version: 20160709211803) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 20160709200625) do
     t.integer  "profile_id"
   end
 
+  add_index "educations", ["profile_id"], name: "index_educations_on_profile_id", using: :btree
+
   create_table "experiences", force: :cascade do |t|
     t.string   "job_title"
     t.string   "company"
@@ -39,8 +41,6 @@ ActiveRecord::Schema.define(version: 20160709200625) do
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
   end
-
-  add_index "educations", ["profile_id"], name: "index_educations_on_profile_id", using: :btree
 
   create_table "links", force: :cascade do |t|
     t.string   "title"
@@ -59,6 +59,35 @@ ActiveRecord::Schema.define(version: 20160709200625) do
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
+
+  create_table "project_taggings", force: :cascade do |t|
+    t.integer  "project_id"
+    t.integer  "project_tag_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "project_taggings", ["project_id"], name: "index_project_taggings_on_project_id", using: :btree
+  add_index "project_taggings", ["project_tag_id"], name: "index_project_taggings_on_project_tag_id", using: :btree
+
+  create_table "project_tags", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "logo"
+    t.string   "web_app_link"
+    t.string   "github_link"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "profile_id"
+  end
+
+  add_index "projects", ["profile_id"], name: "index_projects_on_profile_id", using: :btree
 
   create_table "skills", force: :cascade do |t|
     t.string   "title"
@@ -84,5 +113,8 @@ ActiveRecord::Schema.define(version: 20160709200625) do
   add_foreign_key "educations", "profiles"
   add_foreign_key "links", "profiles"
   add_foreign_key "profiles", "users"
+  add_foreign_key "project_taggings", "project_tags"
+  add_foreign_key "project_taggings", "projects"
+  add_foreign_key "projects", "profiles"
   add_foreign_key "skills", "profiles"
 end

@@ -4,5 +4,9 @@ class Profile < ActiveRecord::Base
   has_many :experiences, dependent: :destroy
   has_many :educations
   has_many :skills
-  
+  has_many :projects
+
+
+
+
 end

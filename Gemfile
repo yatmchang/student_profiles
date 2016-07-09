@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 
-
+gem 'simple_form'
+gem "bootstrap-sass"
+gem "quiet_assets"
+gem 'carrierwave'
+gem "mini_magick"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use postgresql as the database for Active Record
@@ -36,7 +40,6 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'quiet_assets'
 # Use Unicorn as the app server
 # gem 'unicorn'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -62,6 +65,7 @@ group :development do
   gem 'awesome_print'
 
   gem 'hirb'
+  gem "fog"
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 
 end

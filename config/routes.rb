@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
 
 
+  resources :projects
+  resources :users, only: [:new, :create, :edit, :update, :show, :index]
+  resources :sessions, only: [:new, :create] do
+    delete :destroy, on: :collection
+  end
+  resources :educations
+  resources :skills
+
+
 
 
 
