@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
   has_secure_password
-  
+
   has_one :profile, dependent: :destroy
-  
+
   has_many :links, through: :profiles
   has_many :experiences, through: :profiles
   has_many :educations, through: :profiles
@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   def full_name
     "#{first_name} #{last_name}".titleize
   end
-
+  
   private
 
   def make_profile
