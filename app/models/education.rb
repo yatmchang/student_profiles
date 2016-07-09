@@ -1,4 +1,6 @@
 class Education < ActiveRecord::Base
+  belongs_to :profile
+
   validates :school, presence: true
   validate :end_date_greater_than_start_date
   validate :start_date_less_than_today
