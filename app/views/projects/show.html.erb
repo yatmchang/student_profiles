@@ -4,6 +4,9 @@
 <h1>github_link: <%= @project.github_link %></h1>
 <%= image_tag @project.logo.url(:medium) %>
 
+<p>Tags: <%= @project.project_tags.map {|t| t.title.capitalize }.join(", ") %></p>
+
+
 <%= link_to "Edit", edit_project_path(@project) %>
 <%= link_to "Delete", project_path(@project),
                       method: :delete,

@@ -44,7 +44,7 @@ end
 
 
 def project_params
-   params.require(:project).permit(:title, :description, :web_app_link, :github_link, :logo)
+   params.require(:project).permit(:title, :description, :web_app_link, :github_link, :logo, {project_tag_ids: []})
  end
 
 

@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20160709200625) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+
   create_table "educations", force: :cascade do |t|
     t.string   "school"
     t.text     "description"
@@ -81,9 +82,23 @@ ActiveRecord::Schema.define(version: 20160709200625) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+
+  create_table "project_taggings", force: :cascade do |t|
+    t.integer  "project_id"
+    t.integer  "project_tag_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "project_taggings", ["project_id"], name: "index_project_taggings_on_project_id", using: :btree
+  add_index "project_taggings", ["project_tag_id"], name: "index_project_taggings_on_project_tag_id", using: :btree
+
+  create_table "project_tags", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 
   add_foreign_key "educations", "profiles"
@@ -102,4 +117,17 @@ ActiveRecord::Schema.define(version: 20160709200625) do
     t.datetime "updated_at",   null: false
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+
+  add_foreign_key "project_taggings", "project_tags"
+  add_foreign_key "project_taggings", "projects"
 end

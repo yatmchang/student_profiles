@@ -5,5 +5,6 @@
   <%= f.input :web_app_link %>
   <%= f.input :github_link%>
   <%= f.input :logo %>
+  <%= f.association :project_tags, as: :check_boxes %>
   <%= f.button :submit, class: "btn-primary" %>
 <% end %>
