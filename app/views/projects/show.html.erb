@@ -1,0 +1,5 @@
+<h1>title: <%= @project.title %></h1>
+<h1>description: <%= @project.description %></h1>
+<h1>web_app_link: <%= @project.web_app_link %></h1>
+<h1>github_link: <%= @project.github_link %></h1>
+<%= image_tag @project.logo.url(:medium) %>
