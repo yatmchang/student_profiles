@@ -1,0 +1,15 @@
+<h1>Edit Experience</h1>
+<%#= @experience.errors.full_messages.join(", ") if @experience %>
+<%= simple_form_for @experience do |f| %>
+  <div class="text-left">
+    <%= f.input :job_title %>
+    <%= f.input :company %>
+    <%= f.input :start_date %>
+    <%#= f.input :end_date %>
+    <%= f.input :end_date, {include_blank: true, default: nil} %>
+    <%= f.label :current %>
+    <%= f.check_box :current, as: :boolean, checked_value: true, unchecked_value: false %>
+    <%= f.input :description %>
+  </div>
+  <%= f.button :submit, class: "btn-primary" %>
+<% end %>

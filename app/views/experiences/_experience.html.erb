@@ -1,0 +1,17 @@
+<h1>All Experiences</h1>
+<% @experiences.each do |experience| %>
+  <p>Job Title: <%= experience.job_title %></p>
+  <p>Company: <%= experience.company %></p>
+  <div>
+  <p>Start Date: <%= experience.start_date %></p> -
+  <% if experience.current? %>
+    <p>Present</p>
+  <% else %>
+    <p>End Date: <%= experience.end_date %></p>
+  <% end %>
+  </div>
+  <p>Description: <%= experience.description %></p>
+  <%= link_to "Edit", edit_experience_path(experience) %>
+  <%= link_to "Delete", experience_path(experience), method: :delete, data: {confirm: "Are you sure?"} %>
+  <hr />
+<% end %>
