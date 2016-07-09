@@ -1,0 +1,9 @@
+<h2>Education</h2>
+<%= @education.errors.full_messages.join(", ") %>
+<%= simple_form_for  @education do |f| %>
+<%= f.input :school %>
+<%= f.input :description %>
+<%= f.file_field :logo %>
+<%= f.input :link %>
+<%= f.button :submit, class: "btn btn-primary" %>
+<% end %>

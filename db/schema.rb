@@ -47,4 +47,13 @@ ActiveRecord::Schema.define(version: 20160709070818) do
 
   add_foreign_key "links", "profiles"
   add_foreign_key "profiles", "users"
+  create_table "educations", force: :cascade do |t|
+    t.string   "school"
+    t.text     "description"
+    t.string   "logo"
+    t.string   "link"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
 end
