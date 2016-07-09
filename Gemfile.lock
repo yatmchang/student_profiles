@@ -38,15 +38,8 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
-    autoprefixer-rails (6.3.7)
-      execjs
-
-    autoprefixer-rails (6.1.2)
-      execjs
-      json
     autoprefixer-rails (6.3.6.2)
       execjs
-
     awesome_print (1.7.0)
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
@@ -82,14 +75,8 @@ GEM
     factory_girl_rails (4.7.0)
       factory_girl (~> 4.7.0)
       railties (>= 3.0.0)
-    faker (1.6.5)
+    faker (1.6.3)
       i18n (~> 0.5)
-    ffi (1.9.13)
-    font-awesome-rails (4.6.3.1)
-      railties (>= 3.2, < 5.1)
-    friendly_id (5.1.0)
-      activerecord (>= 4.0.0)
-
     ffi (1.9.10)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
@@ -219,14 +206,15 @@ GEM
     fog-xml (0.1.2)
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
+    font-awesome-rails (4.6.3.0)
+      railties (>= 3.2, < 5.1)
     formatador (0.2.5)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     hirb (0.7.3)
     i18n (0.7.0)
-    interactive_editor (0.0.10)
-      spoon (>= 0.0.1)
-
     inflecto (0.0.2)
     interactive_editor (0.0.10)
       spoon (>= 0.0.1)
@@ -294,25 +282,26 @@ GEM
     rbvmomi (1.8.2)
       builder
       nokogiri (>= 1.4.1)
+      trollop
     rdoc (4.2.2)
       json (~> 1.4)
-    rspec-core (3.5.1)
-      rspec-support (~> 3.5.0)
-    rspec-expectations (3.5.0)
+    rspec-core (3.4.4)
+      rspec-support (~> 3.4.0)
+    rspec-expectations (3.4.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.5.0)
-    rspec-mocks (3.5.0)
+      rspec-support (~> 3.4.0)
+    rspec-mocks (3.4.1)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.5.0)
-    rspec-rails (3.5.1)
-      actionpack (>= 3.0)
-      activesupport (>= 3.0)
-      railties (>= 3.0)
-      rspec-core (~> 3.5.0)
-      rspec-expectations (~> 3.5.0)
-      rspec-mocks (~> 3.5.0)
-      rspec-support (~> 3.5.0)
-    rspec-support (3.5.0)
+      rspec-support (~> 3.4.0)
+    rspec-rails (3.4.2)
+      actionpack (>= 3.0, < 4.3)
+      activesupport (>= 3.0, < 4.3)
+      railties (>= 3.0, < 4.3)
+      rspec-core (~> 3.4.0)
+      rspec-expectations (~> 3.4.0)
+      rspec-mocks (~> 3.4.0)
+      rspec-support (~> 3.4.0)
+    rspec-support (3.4.1)
     ruby-graphviz (1.2.2)
     sass (3.4.22)
     sass-rails (5.0.5)
@@ -368,10 +357,9 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   factory_girl_rails
   faker
+  fog
   font-awesome-rails
   friendly_id
-
-  fog
   hirb
   interactive_editor
   jbuilder (~> 2.0)
