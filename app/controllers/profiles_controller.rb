@@ -16,6 +16,6 @@ class ProfilesController < ApplicationController
 
   private
     def profile_params
-      params.require(:profile).permit(:about, :twitter, :github, :linkedin)
+      params.require(:profile).permit(:avatar, :available, :short_pitch, :long_pitch, :resume)
     end
 end
