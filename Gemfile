@@ -40,7 +40,6 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'quiet_assets'
 # Use Unicorn as the app server
 # gem 'unicorn'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

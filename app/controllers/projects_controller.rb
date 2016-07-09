@@ -23,7 +23,7 @@ def edit
 end
 
 def update
-   @project = Question.find params[:id]
+   @project = Project.find params[:id]
   if @project.update project_params
     redirect_to project_path(@project), notice: "updated"
   else
@@ -34,8 +34,8 @@ end
 def show
   @project = Project.find params[:id]
 end
-def destory
-  @project = Question.find params[:id]
+def destroy
+  @project = Project.find params[:id]
   @project.destroy
   redirect_to projects_path, notice: "destroyed"
 end
