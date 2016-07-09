@@ -1,7 +1,12 @@
 class User < ActiveRecord::Base
   has_secure_password
-
+  
   has_one :profile, dependent: :destroy
+  
+  has_many :links, through: :profiles
+  has_many :experiences, through: :profiles
+  has_many :educations, through: :profiles
+  has_many :skills, through: :profiles
 
   attr_accessor :current_password
 

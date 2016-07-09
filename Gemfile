@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 
-
+gem 'simple_form'
+gem "bootstrap-sass"
+gem "quiet_assets"
+gem 'carrierwave'
+gem "mini_magick"
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -18,12 +22,8 @@ gem 'coffee-rails', '~> 4.1.0'
 
 
 
-gem 'carrierwave'
 gem 'friendly_id'
-gem 'simple_form'
-gem 'mini_magick'
 gem 'font-awesome-rails'
-gem 'bootstrap-sass'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -35,7 +35,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-gem 'quiet_assets'
 # Use Unicorn as the app server
 # gem 'unicorn'
 # Use Capistrano for deployment
