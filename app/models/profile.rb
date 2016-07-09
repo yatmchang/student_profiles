@@ -6,7 +6,9 @@ class Profile < ActiveRecord::Base
   has_many :skills
   has_many :projects
 
+  
 
+  mount_uploader :avatar, AvatarUploader
 
 
 end

@@ -54,8 +54,13 @@ ActiveRecord::Schema.define(version: 20160709213508) do
 
   create_table "profiles", force: :cascade do |t|
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "avatar"
+    t.text     "short_pitch"
+    t.text     "long_pitch"
+    t.boolean  "available",   default: false
+    t.string   "resume"
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
