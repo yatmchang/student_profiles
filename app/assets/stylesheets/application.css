@@ -22,4 +22,20 @@
 
  #user-name {
   font-weight: bold;
+}
+
+ .container {
+   width: 80%
+}
+
+ .avatar {
+   display: inline;
+   width: 20%;
+   float: left;
+ }
+
+ .name-pitch {
+   display: inline;
+   float: right;
+   width: 68%;
  }

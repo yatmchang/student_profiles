@@ -29,7 +29,7 @@ class ProfilesController < ApplicationController
   end
 
   private
-    def profile_params
-      params.require(:profile).permit(:avatar, :available, :short_pitch, :long_pitch, :resume)
-    end
+  def profile_params
+    params.require(:profile).permit(:avatar, :available, :short_pitch, :long_pitch, :resume)
+  end
 end
