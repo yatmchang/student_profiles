@@ -14,10 +14,9 @@ Rails.application.routes.draw do
       resources :links, only: [:create, :update, :destroy]
     end
   end
+  root "users#new"
   resources :sessions, only: [:new, :create] do
     delete :destroy, on: :collection
   end
-
-
-
+  resources :experiences
 end
