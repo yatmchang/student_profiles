@@ -16,7 +16,11 @@
   end
 
   def show
-    @user = current_user
+    @user = User.find(params[:id])
+    @skills = @user.profile.skills
+    @projects = @user.profile.projects
+    @educations = @user.profile.educations
+    @experiences = @user.profile.experiences
   end
 
   def edit
