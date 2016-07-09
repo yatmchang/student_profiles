@@ -17,10 +17,10 @@
 
   def show
     @user = User.find(params[:id])
-    @skills = @user.profile.skills
-    @projects = @user.profile.projects
-    @educations = @user.profile.educations
-    @experiences = @user.profile.experiences
+    @skills = @user.skills
+    @projects = @user.projects
+    @educations = @user.educations
+    @experiences = @user.experiences
   end
 
   def edit
