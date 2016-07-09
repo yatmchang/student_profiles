@@ -3,10 +3,11 @@ class User < ActiveRecord::Base
 
   has_one :profile, dependent: :destroy
 
-  has_many :links, through: :profiles
-  has_many :experiences, through: :profiles
-  has_many :educations, through: :profiles
-  has_many :skills, through: :profiles
+  has_many :links, through: :profile
+  has_many :experiences, through: :profile
+  has_many :educations, through: :profile
+  has_many :skills, through: :profile
+  has_many :projects, through: :profile
 
   attr_accessor :current_password
 
@@ -20,7 +21,7 @@ class User < ActiveRecord::Base
   def full_name
     "#{first_name} #{last_name}".titleize
   end
-  
+
   private
 
   def make_profile
