@@ -1,7 +1,7 @@
 class ExperiencesController < ApplicationController
 
   before_action :find_experience, only: [:update, :destroy]
-
+  before_action :authenticate_user!, except: [:index]
   def index
     @experiences = Experience.order(created_at: :desc)
     @experience = Experience.new
