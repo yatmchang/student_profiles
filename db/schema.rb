@@ -16,10 +16,8 @@ ActiveRecord::Schema.define(version: 20160709200625) do
 
 
 
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
 
   create_table "educations", force: :cascade do |t|
     t.string   "school"
@@ -65,6 +63,7 @@ ActiveRecord::Schema.define(version: 20160709200625) do
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
 
+
   create_table "skills", force: :cascade do |t|
     t.string   "title"
     t.integer  "rating"
@@ -83,12 +82,12 @@ ActiveRecord::Schema.define(version: 20160709200625) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
 
+
   create_table "project_taggings", force: :cascade do |t|
     t.integer  "project_id"
     t.integer  "project_tag_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-
   end
 
   add_index "project_taggings", ["project_id"], name: "index_project_taggings_on_project_id", using: :btree
@@ -106,7 +105,6 @@ ActiveRecord::Schema.define(version: 20160709200625) do
   add_foreign_key "profiles", "users"
   add_foreign_key "skills", "profiles"
 
-
   create_table "projects", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -115,6 +113,13 @@ ActiveRecord::Schema.define(version: 20160709200625) do
     t.string   "github_link"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -128,6 +133,8 @@ ActiveRecord::Schema.define(version: 20160709200625) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
+  add_foreign_key "links", "profiles"
+  add_foreign_key "profiles", "users"
   add_foreign_key "project_taggings", "project_tags"
   add_foreign_key "project_taggings", "projects"
 end
