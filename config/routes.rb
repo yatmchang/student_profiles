@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
   resources :educations
+  resources :skills
+
 
   root "educations#index"
   # The priority is based upon order of creation: first created -> highest priority.

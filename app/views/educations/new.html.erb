@@ -2,18 +2,7 @@
   <div class="edu">
 <h2 id="heading">Education</h2>
 <br>
-<%= @education.errors.full_messages.join(", ") %>
-<%= simple_form_for  @education do |f| %>
-<%= f.input :school, placeholder: "Please enter your school information", input_html: {class:"my-school"}  %>
-<br>
-<%= f.input :description, placeholder: "Is there anything you want to add regarding your school experience?", input_html: {class:"my-description"} %>
-<br>
-<div style="font-weight:bold;">Logo </div><%= f.file_field :logo %>
-<br>
-<%= f.input :link, placeholder: "Related links", input_html: {class:"my-link"}  %>
-<br>
-<%= f.button :submit, class: "btn btn-primary" %>
-<% end %>
+<%= render "form" %>
 <br>
 <%= link_to "Add another school", new_education_path %>
 </div>
