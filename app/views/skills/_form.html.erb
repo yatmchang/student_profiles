@@ -1,0 +1,11 @@
+
+<%= @skill.errors.full_messages.join(", ") %>
+<%= simple_form_for  @skill do |f| %>
+<%= f.input :title, placeholder: "Please enter your skill here", input_html: {class:"my-skill"}  %>
+<br>
+<%= f.input :rating, input_html: {class:"my-rating"} %>
+<br>
+<%= f.button :submit, class: "btn btn-primary" %>
+<% end %>
+<br>
+<%= link_to "Add another skill", new_skill_path %>
