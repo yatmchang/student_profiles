@@ -1,17 +1,10 @@
 class ExperiencesController < ApplicationController
 
-  before_action :find_experience, only: [:show, :edit, :update, :destroy]
+  before_action :find_experience, only: [:update, :destroy]
 
   def index
     @experiences = Experience.order(created_at: :desc)
     @experience = Experience.new
-  end
-
-  def new
-    @experience = Experience.new
-  end
-
-  def show
   end
 
   def create
@@ -23,9 +16,6 @@ class ExperiencesController < ApplicationController
     else
       render :index
     end
-  end
-
-  def edit
   end
 
   def update

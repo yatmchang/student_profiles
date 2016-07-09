@@ -15,6 +15,7 @@ class LinksController < ApplicationController
   def update
     if @link.update(link_params)
       redirect_to user_path(current_user)
+    end
   end
 
   def destroy
