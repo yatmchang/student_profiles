@@ -1,0 +1,14 @@
+<section>
+  <div class="show">
+    <p><%= skill.title %></p>
+    <p>Level: <%= skill.rating%>/10</p>
+
+    <%= link_to "Edit", user_profile_education_path(@user, profile, skill) %>
+    <%= link_to "Delete", user_profile_education_path(@user, profile, skill), method: :delete,
+    data:   {confirm: "Are you sure?"} %>
+    <br>
+    <br>
+    <%= link_to "Add another skill", new_skill_path %>
+
+  </div>
+</section>

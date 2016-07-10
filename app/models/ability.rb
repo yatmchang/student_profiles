@@ -33,7 +33,7 @@ class Ability
     end
 
     user ||= User.new # guest user (not logged in)
-    if user.admin?
+    if user.is_admin?
       can :manage, :all
     else
       can :read, :all

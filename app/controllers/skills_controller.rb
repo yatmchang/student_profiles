@@ -15,12 +15,13 @@ class SkillsController < ApplicationController
   end
 
   def create
-    @skill      = Skill.new skill_params
+    @skill = Skill.new skill_params
+    @profile = current_user.profile
+    @skill.profile_id = @profile.id
     if @skill.save
-      redirect_to skill_path(@skill, anchor: 'skill'), notice: "Your information has successfully saved!"
+      redirect_to edit_user_path(current_user), notice: "Changes Saved!"
     else
-      flash[:alert] = "Sorry, a problem occured while saving your information, please try again."
-      render :new
+      redirect_to edit_user_path(current_user), alert: "Unable To Save"
     end
   end
 

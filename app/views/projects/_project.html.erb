@@ -1,0 +1,13 @@
+<p>Title: <%= project.title %></p>
+<p>Description: <%= project.description %></p>
+<p>Web App Link: <%= project.web_app_link %></p>
+<p>Github Link: <%= project.github_link %></p>
+<%= image_tag project.logo.url(:medium) %>
+
+<p>Tags: <%= project.project_tags.map {|t| t.title.capitalize }.join(", ") %></p>
+
+
+<%= link_to "Edit", user_profile_education_path(@user, profile, project) %>
+<%= link_to "Delete", user_profile_education_path(@user, profile, project),
+                      method: :delete,
+                      data:   {confirm: "Are you sure?"} %>

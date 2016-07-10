@@ -8,14 +8,13 @@ class ProjectsController < ApplicationController
   end
 
   def create
-      @project = Project.new project_params
-      # @project.aauser = current_user
+    @project = Project.new project_params
+    @profile = current_user.profile
+    @project.profile_id = @profile.id
     if @project.save
-      flash[:notice] = "Sucessful"
-      redirect_to project_path(id: @project)
+      redirect_to edit_user_path(current_user), notice: "Changes Saved!"
     else
-      flash[:alert]= "not created!"
-      render :new
+      redirect_to edit_user_path(current_user), alert: "Unable To Save"
     end
   end
 

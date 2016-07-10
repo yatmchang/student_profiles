@@ -11,11 +11,12 @@ class ExperiencesController < ApplicationController
   def create
     @experience = Experience.new experience_params
     @experiences = Experience.order(created_at: :desc)
-    # @experience.user = current_user
+    @profile = current_user.profile
+    @experience.profile_id = @profile
     if @experience.save
-      redirect_to experiences_path
+      redirect_to edit_user_path(current_user), notice: "Changes Saved!"
     else
-      render :index
+      redirect_to edit_user_path(current_user), alert: "Unable To Save"
     end
   end
 
@@ -24,9 +25,9 @@ class ExperiencesController < ApplicationController
 
   def update
     if @experience.update experience_params
-      redirect_to experiences_path
+      redirect_to edit_user_path(current_user)
     else
-      render :edit
+      redirect_to edit_user_path(current_user)
     end
   end
 

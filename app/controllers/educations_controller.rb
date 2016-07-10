@@ -15,13 +15,13 @@ class EducationsController < ApplicationController
   end
 
   def create
-    @education      = Education.new education_params
-    # @education.user = current_user
+    @education = Education.new education_params
+    @profile = current_user.profile
+    @education.profile_id = @profile.id
     if @education.save
-      redirect_to education_path(@education), notice: "Your information has successfully saved!"
+      redirect_to edit_user_path(current_user), notice: "Changes Saved!"
     else
-      flash[:alert] = "Sorry, a problem occured while saving your information, please try again."
-      render :new
+      redirect_to edit_user_path(current_user), alert: "Unable To Save"
     end
   end
 

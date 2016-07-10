@@ -73,8 +73,8 @@ h1 {
 
 .avatar {
   display: inline;
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   float: left;
   border: 1px solid grey
 }
@@ -83,4 +83,8 @@ h1 {
   display: inline;
   float: right;
   width: 70%;
+}
+
+.profile-header {
+  margin-bottom: 15px;
 }
