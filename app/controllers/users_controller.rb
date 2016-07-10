@@ -1,5 +1,5 @@
   class UsersController < ApplicationController
-  before_action :authenticate_user!, except: [:new, :create, :index]
+  before_action :authenticate_user!, except: [:new, :show, :create, :index]
 
   def new
     @user = User.new
@@ -24,7 +24,7 @@
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def update
