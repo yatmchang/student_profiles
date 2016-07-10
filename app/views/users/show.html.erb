@@ -18,6 +18,8 @@
     <div class="name-pitch">
       <h2><%= @user.full_name %></h2>
       <p><%= @user %></p>
+      <!-- Modal -->
+      <%= link_to "Contact " + @user.first_name.titleize, contact_path(@user.profile)%>
     </div>
 
     <ul class="nav nav-tabs">
