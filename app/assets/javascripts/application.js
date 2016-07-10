@@ -15,3 +15,13 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+// $(document).ready(function(){
+
+//   $("#user-form").hide();
+
+//   $("#account-tab").click(function(){
+//     $("#user-form").show();
+//   });
+
+
+// })

@@ -1,6 +1,8 @@
 <%= simple_form_for [@user, @profile] do |f| %>
   <%= f.input :short_pitch, placeholder: "140 character pitch" %>
   <%= f.input :long_pitch, placeholder: "500 character pitch" %>
+  <hr>
+  <p>Available for hire?</p>
   <%= f.check_box :available, as: :boolean, checked_value: true, unchecked_value: false %>
   <%= f.file_field :avatar %>
   <%= f.file_field :resume %>
