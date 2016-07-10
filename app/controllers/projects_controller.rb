@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
 
   before_action :authenticate_user!, except: [:show, :index]
+  before_action :authorize_owner, only: [:edit, :update, :destroy]
 
   def new
     @project = Project.new

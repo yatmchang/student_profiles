@@ -19,6 +19,9 @@ class ExperiencesController < ApplicationController
     end
   end
 
+  def show
+  end
+
   def update
     if @experience.update experience_params
       redirect_to experiences_path
