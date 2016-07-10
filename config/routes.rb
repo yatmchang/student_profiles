@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       resources :educations, only: [:create, :update, :destroy]
       resources :skills, only: [:create, :update, :destroy]
       resources :projects, only: [:create, :update, :destroy]
-      resources :experiences, only: [:create, :update, :destroy]
+      resources :experiences, only: [:create, :edit, :update, :destroy]
     end
   end
   resources :sessions, only: [:new, :create] do

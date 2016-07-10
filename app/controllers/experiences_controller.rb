@@ -1,7 +1,8 @@
 class ExperiencesController < ApplicationController
-
   before_action :find_experience, only: [:update, :destroy]
   before_action :authenticate_user!, except: [:index]
+  before_action :authorize_owner, only: [:edit, :update, :destroy]
+
   def index
     @experiences = Experience.order(created_at: :desc)
     @experience = Experience.new
@@ -10,19 +11,23 @@ class ExperiencesController < ApplicationController
   def create
     @experience = Experience.new experience_params
     @experiences = Experience.order(created_at: :desc)
-    # @experience.user = current_user
+    @profile = current_user.profile
+    @experience.profile_id = @profile.id
     if @experience.save
-      redirect_to experiences_path
+      redirect_to edit_user_path(current_user), notice: "Changes Saved!"
     else
-      render :index
+      redirect_to edit_user_path(current_user), alert: "Unable To Save"
     end
+  end
+
+  def show
   end
 
   def update
     if @experience.update experience_params
-      redirect_to experiences_path
+      redirect_to edit_user_path(current_user)
     else
-      render :edit
+      redirect_to edit_user_path(current_user)
     end
   end
 
@@ -39,5 +44,9 @@ class ExperiencesController < ApplicationController
 
   def find_experience
     @experience = Experience.find params[:id]
+  end
+
+  def authorize_owner
+    redirect_to root_path, alert: "Access Denied" unless can? :manage, @experience
   end
 end

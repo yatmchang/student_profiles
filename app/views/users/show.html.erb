@@ -1,13 +1,14 @@
 <div class="container">
-  <div class="avatar" style="">
-    <%#= image_tag @user.profile.avatar %>
+  <div class="row profile-header">
+    <div class="avatar col-md-3">
+      <%#= image_tag @user.profile.avatar %>
+    </div>
+    <div class="name-pitch col-md-9">
+      <h2><%= @user.full_name %></h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
   </div>
-  <div class="name-pitch">
-    <h2><%= @user.full_name %></h2>
-    <!-- Modal -->
-    <%= link_to "Contact " + @user.first_name.titleize, contact_path(@user)%>
-  </div>
-
+<div class="row">
   <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#skill">Skills</a></li>
     <li><a data-toggle="tab" href="#project">Projects</a></li>
@@ -18,27 +19,23 @@
   <div class="tab-content">
     <div id="skill" class="tab-pane fade in active">
       <% @skills.each do |skill| %>
-      <%= link_to skill.title,skill_path(skill) %>
-      <hr>
+        <%= render "skills/skill", skill: skill, profile: @profile %>
       <% end %>
     </div>
-
     <div id="project" class="tab-pane fade">
       <% @projects.each do |project| %>
-      <%= link_to project.title,project_path(skill) %>
-      <hr>
+      <%= render "projects/project", project: project, profile: @profile %>
       <% end %>
     </div>
     <div id="education" class="tab-pane fade">
       <% @educations.each do |education| %>
-      <%= link_to education.school,education_path(education) %>
-      <hr>
+      <%= render "educations/education", education: education, profile: @profile %>
       <% end %>
     </div>
     <div id="experience" class="tab-pane fade">
       <% @experiences.each do |experience| %>
-      <%= link_to experience.title,experience_path(experience) %>
-      <hr>
+      <%= render "experiences/experience", experience: experience, profile: @profile %>
+      <hr />
       <% end %>
     </div>
   </div>

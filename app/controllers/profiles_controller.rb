@@ -13,6 +13,8 @@ class ProfilesController < ApplicationController
     redirect_to user_path(@user), notice: "Message sent"
   end
 
+  before_action :authenticate_user!, except: [:show, :index]
+
   def edit
     @user = User.find params[:user_id]
     @profile = Profile.find params[:id]
@@ -29,7 +31,7 @@ class ProfilesController < ApplicationController
   end
 
   private
-    def profile_params
-      params.require(:profile).permit(:avatar, :available, :short_pitch, :long_pitch, :resume)
-    end
+  def profile_params
+    params.require(:profile).permit(:avatar, :available, :short_pitch, :long_pitch, :resume)
+  end
 end

@@ -1,5 +1,7 @@
 class EducationsController < ApplicationController
   before_action :find_education, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authorize_owner, only: [:edit, :update, :destroy]
 
   def index
     @educations = Education.all
@@ -13,13 +15,13 @@ class EducationsController < ApplicationController
   end
 
   def create
-    @education      = Education.new education_params
-    # @education.user = current_user
+    @education = Education.new education_params
+    @profile = current_user.profile
+    @education.profile_id = @profile.id
     if @education.save
-      redirect_to education_path(@education), notice: "Your information has successfully saved!"
+      redirect_to edit_user_path(current_user), notice: "Changes Saved!"
     else
-      flash[:alert] = "Sorry, a problem occured while saving your information, please try again."
-      render :new
+      redirect_to edit_user_path(current_user), alert: "Unable To Save"
     end
   end
 
@@ -52,4 +54,9 @@ class EducationsController < ApplicationController
   def find_education
     @education = Education.find params[:id]
   end
+
+  def authorize_owner
+    redirect_to root_path, alert: "Access Denied" unless can? :manage, @education
+  end
+
 end
