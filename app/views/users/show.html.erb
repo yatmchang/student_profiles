@@ -25,9 +25,19 @@
       </div>
     </div>
   </div>
-<div class="row">
+  <div class="avatar" style="">
+    <%#= image_tag @user.profile.avatar %>
+  </div>
+  <div class="name-pitch">
+    <h2><%= @user.full_name %></h2>
+    <!-- Modal -->
+    <%= link_to "Contact " + @user.first_name.titleize, contact_path(@user)%>
+  </div>
+  <br>
+  <br>
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#skill">Skills</a></li>
+    <li class="active"><a data-toggle="tab" href="#basicinfo">Basic Information</a></li>
+    <li id="skill-tab" data-userid="<%= @user.id %>" data-profileid="<%= @user.profile.id %>"><a data-toggle="tab" href="#skill">Skills</a></li>
     <li><a data-toggle="tab" href="#project">Projects</a></li>
     <li><a data-toggle="tab" href="#education">Education</a></li>
     <li><a data-toggle="tab" href="#experience">Experience</a></li>
@@ -55,6 +65,44 @@
       <hr />
       <% end %>
 
+
+  <div class="tab-content">
+    <div id="basicinfo" class="tab-pane fade in active">
+    </div>
+    <div id="skill" class="tab-pane fade">
+      <br>
+      <div id="progress-bar">
+          <% @user.profile.skills.each do |skill| %>
+          <div id="omg">
+            <p><%= skill.title %>: &nbsp; </p>
+            <div id="<%= dom_id(skill) %>" class="progressBarElement tiny-green" data-skill-rating="<%= skill.rating %>">
+            </div>
+          </div>
+            <br>
+          <% end %>
+      </div>
+    </div>
+    <div id="project" class="tab-pane fade">
+      <% @projects.each do |project| %>
+      <%= link_to project.title,project_path(skill) %>
+      <hr>
+      <% end %>
+    </div>
+    <div id="education" class="tab-pane fade">
+      <% @educations.each do |education| %>
+      <%= link_to education.school,education_path(education) %>
+      <hr>
+      <% end %>
+    </div>
+    <div id="experience" class="tab-pane fade">
+      <% @experiences.each do |experience| %>
+      <%= link_to experience.title,experience_path(experience) %>
+      <hr>
+      <% end %>
     </div>
   </div>
 </div>
+
+<!-- <script>
+progressBar(75, $('#progressBar'));
+</script> -->

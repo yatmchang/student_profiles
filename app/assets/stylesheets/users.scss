@@ -35,7 +35,6 @@ h1 {
 .nav-tabs > li, .nav-pills > li {
     float:none;
     display:inline-block;
-    *display:inline; /* ie7 fix */
      zoom:1; /* hasLayout ie7 trigger */
 }
 
@@ -135,37 +134,60 @@ h1 {
   border-radius: 5px;
   margin-left: 10px;
 }
-
-#progress-bar-1 {
-  width: 300px;
-  // border-radius: 2px;
-  display: flex;
-  color: #555;
-  font-family: sans-serif;
-    font-weight: bold;
-}
-#progress-bar-2 {
-  display: flex;
-  color: #555;
-  font-family: sans-serif;
-    font-weight: bold;
-
-}
-#progress-bar-3 {
-  display: flex;
-  color: #555;
-  font-family: sans-serif;
-    font-weight: bold;
-
-}
-#progress-bar-4 {
-  display: flex;
-  color: #555;
-  font-family: sans-serif;
-    font-weight: bold;
-
-}
-
-// .section {
-//   border-radius: 2px;
+// .meter {
+//   background-color: #FFC064;
+//   height: 20px;
+//   width: 100%;
+//   border-radius: 5px;
+//   margin-left: 10px;
 // }
+//
+// #progress-bar {
+//   width: 300px;
+//   // border-radius: 2px;
+//   display: flex;
+//   color: #555;
+//   font-family: sans-serif;
+//   font-weight: bold;
+// }
+.tiny-green {
+    position: relative;
+    padding: 10px;
+  height: 15px;
+	background-image:-moz-linear-gradient(53% 13% -90deg,rgb(58,64,80) 0%,rgb(58,64,80) 47%,rgb(46,50,62) 48%,rgb(46,50,62) 100%);
+	background-image:-webkit-gradient(linear,53% 13%,53% 79%,color-stop(0, rgb(58,64,80)),color-stop(0.47, rgb(58,64,80)),color-stop(0.48, rgb(46,50,62)),color-stop(1, rgb(46,50,62)));
+	background-image:-webkit-linear-gradient(-90deg,rgb(58,64,80) 0%,rgb(58,64,80) 47%,rgb(46,50,62) 48%,rgb(46,50,62) 100%);
+	background-image: linear-gradient(-180deg, #2eac66 0%, #7ebc57 47%, #b3cd41 48%, #dfdd19 100%);
+
+	-moz-border-radius: 10px; /* Firefox */
+	-webkit-border-radius: 10px; /* Webkit */
+	border-radius: 10px;
+}
+
+.tiny-green div {
+
+	font-family: arial;
+	font-size: 3px;
+	color: white;
+	text-align: right;
+	text-shadow: 0px 0px 2px #000;
+	text-indent: 9999px;
+	overflow: hidden;
+
+	background-image:-webkit-gradient(linear,71% 25%,71% 69%,color-stop(0, rgb(118,177,1)),color-stop(0.47, rgb(118,177,1)),color-stop(0.48, rgb(102,153,0)),color-stop(1, rgb(102,153,0)));
+	background-image:-webkit-linear-gradient(-90deg,rgb(118,177,1) 0%,rgb(118,177,1) 47%,rgb(102,153,0) 48%,rgb(102,153,0) 100%);
+	background-image:-moz-linear-gradient(71% 25% -180deg,rgb(118,177,1) 0%,rgb(118,177,1) 47%,rgb(102,153,0) 48%,rgb(102,153,0) 100%);
+	background-image: linear-gradient(-180deg, #2eac66 0%, #7ebc57 47%, #b3cd41 48%, #dfdd19 100%);
+
+	-moz-border-radius: 10px; /* Firefox */
+	-webkit-border-radius: 10px; /* Webkit */
+	border-radius: 10px;
+}
+
+#omg {
+  display: inline-flex;
+}
+
+#omg p {
+  margin-bottom: 20px;
+}
