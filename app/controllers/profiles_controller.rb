@@ -19,10 +19,10 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    user = User.find params[:user_id]
-    profile = Profile.find params[:id]
-    if profile.update profile_params
-      redirect_to user_path(user), notice: "Profile Updated"
+    @user = User.find params[:user_id]
+    @profile = Profile.find params[:id]
+    if @profile.update profile_params
+      redirect_to user_path(@user), notice: "Profile Updated"
     else
       render :edit
     end
