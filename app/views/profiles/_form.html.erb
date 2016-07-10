@@ -1,0 +1,7 @@
+<%= simple_form_for profile, :url => {:action => "contact"}, method: :post do |f| %>
+<%= f.input :contact_name  %>
+<%= f.input :contact_email %>
+<%= f.input :contact_text, label: "Message" %>
+<%= f.button :submit, class: "btn btn-primary", value: "Send" %>
+<% end %>
+<br>

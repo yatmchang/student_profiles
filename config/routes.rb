@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'password_resets/new'
+
   resources :projects
   resources :users, only: [:new, :create, :edit, :update, :show, :index]
   resources :sessions, only: [:new, :create] do
@@ -13,6 +15,8 @@ Rails.application.routes.draw do
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  get "/contact/:user_id" => "profiles#new_contact"
+  post "/contact/:user_id" => "profiles#contact", as: :contact
 
   resources :users, only: [:new, :create, :edit, :update, :show, :index] do
     resources :profiles, only: [:edit, :update] do
@@ -25,4 +29,5 @@ Rails.application.routes.draw do
     delete :destroy, on: :collection
   end
   resources :experiences
+  resources :password_resets
 end
