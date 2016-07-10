@@ -1,5 +1,4 @@
 
-<%#= @skill.errors.full_messages.join(", ") %>
 <%= simple_form_for [@user, @profile, @skill] do |f| %>
 <%= f.input :title, placeholder: "Please enter your skill here", input_html: {class:"my-skill"}  %>
 <br>
