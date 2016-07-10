@@ -1,6 +1,7 @@
 class EducationsController < ApplicationController
   before_action :find_education, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:show, :index]
+  before_action :authorize_owner, only: [:edit, :update, :destroy]
 
   def index
     @educations = Education.all
@@ -53,4 +54,9 @@ class EducationsController < ApplicationController
   def find_education
     @education = Education.find params[:id]
   end
+
+  def authorize_owner
+    redirect_to root_path, alert: "Access Denied" unless can? :manage, @education
+  end
+
 end

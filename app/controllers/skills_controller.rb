@@ -1,5 +1,7 @@
 class SkillsController < ApplicationController
   before_action :find_skill, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authorize_owner, only: [:edit, :update, :destroy]
 
   def index
     @skills = Skill.all
@@ -50,5 +52,9 @@ class SkillsController < ApplicationController
 
   def find_skill
     @skill = Skill.find params[:id]
+  end
+
+  def authorize_owner
+    redirect_to root_path, alert: "Access Denied" unless can? :manage, @skill
   end
 end

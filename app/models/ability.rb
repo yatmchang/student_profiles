@@ -8,12 +8,37 @@ class Ability
     #   profile.user == user
     # end
 
+<<<<<<< 098b933108aa60c3e9cf9f441a71183baed4d84c
     # user ||= User.new # guest user (not logged in)
     # if user.admin?
     #   can :manage, :all
     # else
     #   can :read, :all
     # end
+=======
+    can :manage, Skill do |skill|
+      skill.user == user
+    end
+
+    can :manage, Project do |project|
+      project.user == user
+    end
+
+    can :manage, Education do |education|
+      education.user == user
+    end
+
+    can :manage, Experience do |experience|
+      experience.user == user
+    end
+
+    user ||= User.new # guest user (not logged in)
+    if user.admin?
+      can :manage, :all
+    else
+      can :read, :all
+    end
+>>>>>>> authorize owner feature
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.

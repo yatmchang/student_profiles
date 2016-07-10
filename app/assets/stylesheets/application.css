@@ -20,15 +20,15 @@
    padding-top: 70px;
  }
 
+
  #user-name {
   font-weight: bold;
 }
 
- .container {
+.container {
    width: 80%;
    margin-bottom: 20px;
- }
-
+}
 
  .avatar {
    display: inline;

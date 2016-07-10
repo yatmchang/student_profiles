@@ -1,7 +1,8 @@
 class ExperiencesController < ApplicationController
-
   before_action :find_experience, only: [:update, :destroy]
   before_action :authenticate_user!, except: [:index]
+  before_action :authorize_owner, only: [:edit, :update, :destroy]
+
   def index
     @experiences = Experience.order(created_at: :desc)
     @experience = Experience.new
@@ -39,5 +40,9 @@ class ExperiencesController < ApplicationController
 
   def find_experience
     @experience = Experience.find params[:id]
+  end
+
+  def authorize_owner
+    redirect_to root_path, alert: "Access Denied" unless can? :manage, @experience
   end
 end
