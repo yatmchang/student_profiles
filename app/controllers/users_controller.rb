@@ -39,6 +39,7 @@
 
   def index
     @users = User.order("first_name DESC")
+    @users = User.all
   end
 
   private
