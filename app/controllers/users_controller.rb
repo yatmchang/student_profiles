@@ -25,10 +25,17 @@
 
   def edit
     @user = current_user
+    @profile = @user.profile
+    @skill = Skill.new
+    @project = Project.new
+    @education = Education.new
+    @experience = Experience.new
+    @link = Link.new
   end
 
   def update
     @user = current_user
+    @profile = @user.profile
     if @user.update user_params
       redirect_to root_path, notice: "Account updated!"
     else

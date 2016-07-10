@@ -1,25 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-  <title>Student Profile</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-</head>
-<body>
-
   <div class="container">
     <div class="avatar" style="">
       <%#= image_tag @user.profile.avatar %>
     </div>
     <div class="name-pitch">
       <h2><%= @user.full_name %></h2>
-      <p><%= @user %></p>
       <!-- Modal -->
-      <%= link_to "Contact " + @user.first_name.titleize, contact_path(@user.profile)%>
+      <%= link_to "Contact " + @user.first_name.titleize, contact_path(@user)%>
     </div>
 
     <ul class="nav nav-tabs">
@@ -35,10 +21,6 @@
         <%= link_to skill.title,skill_path(skill) %>
         <hr>
         <% end %>
-        <% if user_signed_in? %>
-        <br>
-        <%= link_to "Add", new_skill_path %>
-        <% end %>
       </div>
 
       <div id="project" class="tab-pane fade">
@@ -46,19 +28,11 @@
         <%= link_to project.title,project_path(skill) %>
         <hr>
         <% end %>
-        <% if user_signed_in? %>
-        <br>
-        <%= link_to "Add", new_project_path %>
-        <% end %>
       </div>
       <div id="education" class="tab-pane fade">
         <% @educations.each do |education| %>
         <%= link_to education.school,education_path(education) %>
         <hr>
-        <% end %>
-        <% if user_signed_in? %>
-        <br>
-        <%= link_to "Add", new_education_path %>
         <% end %>
       </div>
       <div id="experience" class="tab-pane fade">
@@ -66,14 +40,8 @@
         <%= link_to experience.title,experience_path(experience) %>
         <hr>
         <% end %>
-        <% if user_signed_in? %>
-        <br>
-        <%= link_to "Add", experiences_path %>
-        <% end %>
+
       </div>
     </div>
   </div>
-
-
-</body>
-</html>
+</div>

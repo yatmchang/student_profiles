@@ -1,10 +1,44 @@
-<h1>Edit Your Info</h1>
-<%= simple_form_for @user do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :email %>
-  <%= f.input :current_password %>
-  <%= f.input :password %>
-  <%= f.input :password_confirmation %>
-  <%= f.button :submit, class: "btn btn-default" %>
-<% end %>
+
+<div class="edit-heading">
+  <h1>Edit Your Information</h1>
+</div>
+
+<div class="container">
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#basicinfo">Basic Information</a></li>
+    <li><a data-toggle="tab" href="#accountinfo">Account Information</a></li>
+    <li><a data-toggle="tab" href="#links">Links</a></li>
+    <li><a data-toggle="tab" href="#projects">Projects</a></li>
+    <li><a data-toggle="tab" href="#education">Education</a></li>
+    <li><a data-toggle="tab" href="#experience">Experience</a></li>
+    <li><a data-toggle="tab" href="#skills">Skills</a></li>
+  </ul>
+</div>
+
+<div class="container" >
+  <div class="tab-content">
+    <div id="basicinfo" class="tab-pane fade in active">
+      <%= render "/profiles/basic" %>
+    </div>
+   <div id="accountinfo" class="tab-pane fade">
+      <%= render "/users/form" %>
+    </div>
+    <div id="links" class="tab-pane fade">
+      <%= render "links/form" %>
+    </div>
+
+    <div id="projects" class="tab-pane fade">
+      <%= render "projects/form" %>
+    </div>
+    <div id="education" class="tab-pane fade">
+      <%= render "/educations/form" %>
+    </div>
+    <div id="experience" class="tab-pane fade">
+      <%= render "experiences/form" %>
+    </div>
+    <div id="skills" class="tab-pane fade">
+      <%= render "skills/form" %>
+    </div>
+  </div>
+</div>
+

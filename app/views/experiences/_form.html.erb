@@ -1,6 +1,6 @@
 <h1>New Experience</h1>
 <%#= @experience.errors.full_messages.join(", ") if @experience %>
-<%= simple_form_for @experience do |f| %>
+<%= simple_form_for [@user, @profile, @experience] do |f| %>
   <div class="text-left">
     <%= f.input :job_title %>
     <%= f.input :company %>
