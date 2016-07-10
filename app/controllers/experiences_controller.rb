@@ -1,5 +1,5 @@
 class ExperiencesController < ApplicationController
-  before_action :find_experience, only: [:update]
+  before_action :find_experience, only: [:update, :destroy]
   before_action :authenticate_user!, except: [:index]
   before_action :authorize_owner, only: [:edit, :update, :destroy]
 
