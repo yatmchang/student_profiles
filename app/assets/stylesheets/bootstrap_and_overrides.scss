@@ -26,6 +26,11 @@ body {
     display: block;
     width: 300px;
 }
+.dropdown{
+  margin-top: 10px;
+}
+// custom navbar css
+
 
 
 .my-skill {
@@ -55,4 +60,30 @@ input {
 
 a {
   color: #1BB4C7;
+}
+
+.navbar-default {
+  background-color: #CB0D0F;
+  min-height: 115px;
+}
+
+.navbar-default .navbar-nav > li > a  {
+  color: white;
+  text-transform: uppercase;
+}
+.navbar-nav > li > a {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  line-height: 20px;
+}
+ .navbar-names {
+    color: white;
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    cursor: hand;
+    text-decoration: none;
+}
+.navbar-right {
+  margin-right: 111px;
 }
