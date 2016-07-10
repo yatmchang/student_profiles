@@ -13,4 +13,8 @@ class Profile < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
   mount_uploader :resume, DocumentUploader
 
+  # def short_pitch_length
+  #   temp = short_pitch[0..140]
+  #
+  # end
 end
