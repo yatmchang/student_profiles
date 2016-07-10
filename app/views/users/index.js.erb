@@ -1,0 +1,9 @@
+$("<%= j render(:partial => 'users', :object => @users) %>")
+  .appendTo($(".infinite-table .render"));
+
+<% if @users.last_page? %>
+  $('.pagination').html("That's all, folks!");
+<% else %>
+  $('.pagination')
+    .html("<%=j link_to_next_page(@users, 'Next Page', :remote => true) %>");
+<% end %>

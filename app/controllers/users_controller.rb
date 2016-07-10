@@ -38,8 +38,8 @@
   end
 
   def index
-    @users = User.order("first_name DESC")
-    @users = User.all
+    @users = User.order("first_name ASC").page(params[:page]).per(16)
+    # @users = User.all
   end
 
   private

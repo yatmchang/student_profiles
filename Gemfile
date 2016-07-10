@@ -6,6 +6,8 @@ gem "bootstrap-sass"
 gem "quiet_assets"
 gem 'carrierwave'
 gem "mini_magick"
+gem 'kaminari'
+gem 'jquery-infinite-pages'
 
 
 
@@ -25,7 +27,6 @@ gem 'coffee-rails', '~> 4.1.0'
 
 
 
-gem 'carrierwave'
 gem 'friendly_id'
 gem 'font-awesome-rails'
 
