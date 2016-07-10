@@ -1,0 +1,7 @@
+<%= simple_form_for [@user, @profile, @link] do |f| %>
+  <%= f.input :title, placeholder: "Github, Twitter, Linkedin" %>
+  <%= f.input :href, placeholder: "href link" %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>
+
+

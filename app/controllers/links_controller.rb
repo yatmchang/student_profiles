@@ -4,7 +4,7 @@ class LinksController < ApplicationController
   def create
     link = Link.new(link_params)
     user = current_user
-    link.user = user
+    link.profile_id  = user.profile
     if link.save
       redirect_to user_path(current_user)
     else

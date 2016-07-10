@@ -26,10 +26,11 @@
   def edit
     @user = current_user
     @profile = @user.profile
-    @skills = @user.skills
-    @project = @user.projects
-    @education = @user.educations
-    @experience = @user.experiences
+    @skill = Skill.new
+    @project = Project.new
+    @education = Education.new
+    @experience = Experience.new
+    @link = Link.new
   end
 
   def update

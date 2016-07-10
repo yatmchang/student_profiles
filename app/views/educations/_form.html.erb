@@ -1,5 +1,5 @@
-<%= @education.errors.full_messages.join(", ") %>
-<%= simple_form_for  @education do |f| %>
+<%#= @education.errors.full_messages.join(", ") %>
+<%= simple_form_for [@user, @profile, @education] do |f| %>
 <%= f.input :school, placeholder: "Please enter your school information", input_html: {class:"my-school"}  %>
 <br>
 <%= f.input :start_date %>
