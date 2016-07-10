@@ -32,8 +32,8 @@
 
  .avatar {
    display: inline;
-   width: 300px;
-   height: 300px;
+   width: 250px;
+   height: 250px;
    float: left;
    border: 1px solid grey
  }
