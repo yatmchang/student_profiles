@@ -2,8 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-
 h1 {
   text-align: center;
   margin-bottom: 40px;
@@ -43,7 +41,6 @@ h1 {
 
 .nav-tabs, .nav-pills {
     text-align:center;
-
 }
 
 #return-to-top {
@@ -110,3 +107,65 @@ h1 {
 .profile-header {
   margin-bottom: 15px;
 }
+.meter-1 {
+  background-color: #FFC064;
+  height: 20px;
+  width: 100%;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+.meter-2 {
+  background-color: #FFC064;
+  height: 20px;
+  width: 30%;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+.meter-3 {
+  background-color: #FFC064;
+  height: 20px;
+  width: 30%;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+.meter-4 {
+  background-color: #FFC064;
+  height: 20px;
+  width: 50%;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+#progress-bar-1 {
+  width: 300px;
+  // border-radius: 2px;
+  display: flex;
+  color: #555;
+  font-family: sans-serif;
+    font-weight: bold;
+}
+#progress-bar-2 {
+  display: flex;
+  color: #555;
+  font-family: sans-serif;
+    font-weight: bold;
+
+}
+#progress-bar-3 {
+  display: flex;
+  color: #555;
+  font-family: sans-serif;
+    font-weight: bold;
+
+}
+#progress-bar-4 {
+  display: flex;
+  color: #555;
+  font-family: sans-serif;
+    font-weight: bold;
+
+}
+
+// .section {
+//   border-radius: 2px;
+// }
