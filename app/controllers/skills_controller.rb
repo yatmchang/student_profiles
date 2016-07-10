@@ -15,7 +15,7 @@ class SkillsController < ApplicationController
   def create
     @skill      = Skill.new skill_params
     if @skill.save
-      redirect_to skill_path(@skill), notice: "Your information has successfully saved!"
+      redirect_to skill_path(@skill, anchor: 'skill'), notice: "Your information has successfully saved!"
     else
       flash[:alert] = "Sorry, a problem occured while saving your information, please try again."
       render :new

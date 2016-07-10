@@ -3,9 +3,17 @@
 
   <div>
     <% @users.each do |user| %>
-      <%#= image_tag user.avatar.url(:large) %>
-      <%= user.full_name %>
-      <%= button_to "View Profile", user_path(user), :class => "btn btn-default", :method => :get  %>
+      <div id="user" class="col-md-3 text-center">
+        <div id="user-image">
+          <%= link_to image_tag(ref="300.png", :class => "img-circle", :style => "width: 200px"), user_path(user) %><br>
+          <%#= image_tag(user.avatar.url(:large)) %>
+        </div>
+        <h4><%= link_to user.full_name, user_path(user) %></h4>
+        <%= "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." %>
+        <%#= user.profile.short_pitch %>
+        <br>
+        <%= button_to "View Profile", user_path(user), :class => "btn btn-default", :method => :get  %>
+      </div>
     <% end %>
   </div>
 </div>
