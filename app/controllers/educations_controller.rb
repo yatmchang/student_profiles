@@ -1,5 +1,6 @@
 class EducationsController < ApplicationController
   before_action :find_education, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:show, :index]
 
   def index
     @educations = Education.all

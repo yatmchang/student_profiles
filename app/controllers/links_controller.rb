@@ -1,5 +1,7 @@
 class LinksController < ApplicationController
   before_action :find_link, only: [:update, :destroy]
+  before_action :authenticate_user!, except: [:show, :index]
+
 
   def create
     link = Link.new(link_params)
