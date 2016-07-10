@@ -1,11 +1,11 @@
 <div class="container">
   <h1>All Students</h1>
 </div>
-  <div class="infinite-table">
-    <div class="render" id="poop  ">
-      <%= render :partial => 'users', :object => @users %>
-    </div>
-    <p class="pagination">
-      <%= link_to_next_page(@users, "Next Page", :remote => true) %>
-    </p>
+<div class="infinite-table">
+  <div class="render">
+    <%= render :partial => 'users', :object => @users %>
   </div>
+  <p class="pagination">
+    <%= link_to_next_page(@users, "Next Page", :remote => true) %>
+  </p>
+</div>
