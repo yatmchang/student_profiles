@@ -1,7 +1,7 @@
 <% @users.each do |user| %>
   <div id="user" class="col-md-3 text-center">
     <div id="user-image">
-      <%= link_to image_tag(ref="300.png", :class => "img-circle", :style => "width: 200px"), user_path(user) %><br>
+      <%= link_to image_tag(ref="user.png", :class => "img-circle", :style => "width: 200px"), user_path(user) %><br>
       <%#= image_tag(user.avatar.url(:large)) %>
     </div>
     <h4><%= link_to user.full_name, user_path(user) %></h4>
