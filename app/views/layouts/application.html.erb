@@ -18,7 +18,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <%= link_to "Logo", root_path, :class => "navbar-brand" %>
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+              <%= image_tag("codecore.jpeg", class: "navbar-logo") %>
+              <!-- <img src="codecore.jpeg", alt="Brand"> -->
+            </a>
+          </div>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -27,24 +32,24 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
-              <li class="user-name"><%= link_to current_user.full_name, user_path(current_user) %></li>
-              <li><%= link_to "Sign Out", sessions_path, method: :delete, data: {confirm: "Are you sure you want to sign out?"} %></li>
+            <li class="user-name"><%= link_to current_user.full_name, user_path(current_user) %></li>
+            <li><%= link_to "Sign Out", sessions_path, method: :delete, data: {confirm: "Are you sure you want to sign out?"} %></li>
             <% else %>
-              <li><%= link_to "Sign In", new_session_path %></li>
-              <li><%= link_to "Sign Up", new_user_path %></li>
+            <li><%= link_to "Sign In", new_session_path %></li>
+            <li><%= link_to "Sign Up", new_user_path %></li>
             <% end %>
           </ul>
         </div>
       </div>
     </nav>
     <% if flash[:notice] %>
-      <div id="flash-notice"><%= flash[:notice] %></div>
+    <div id="flash-notice"><%= flash[:notice] %></div>
     <% elsif flash[:alert] %>
-      <div id="flash-alert"><%= flash[:alert] %></div>
+    <div id="flash-alert"><%= flash[:alert] %></div>
     <% end %>
   </div>
 
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>

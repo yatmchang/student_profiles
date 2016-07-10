@@ -33,27 +33,44 @@
         <%= link_to skill.title,skill_path(skill) %>
         <hr>
         <% end %>
+        <% if user_signed_in? %>
+        <br>
+        <%= link_to "Add", new_skill_path %>
+        <% end %>
       </div>
+
+      <div id="project" class="tab-pane fade">
+        <% @projects.each do |project| %>
+        <%= link_to project.title,project_path(skill) %>
+        <hr>
+        <% end %>
+        <% if user_signed_in? %>
+        <br>
+        <%= link_to "Add", new_project_path %>
+        <% end %>
+      </div>
+      <div id="education" class="tab-pane fade">
+        <% @educations.each do |education| %>
+        <%= link_to education.school,education_path(education) %>
+        <hr>
+        <% end %>
+        <% if user_signed_in? %>
+        <br>
+        <%= link_to "Add", new_education_path %>
+        <% end %>
+      </div>
+      <div id="experience" class="tab-pane fade">
+        <% @experiences.each do |experience| %>
+        <%= link_to experience.title,experience_path(experience) %>
+        <hr>
+        <% end %>
+        <% if user_signed_in? %>
+        <br>
+        <%= link_to "Add", experiences_path %>
+        <% end %>
+      </div>
+    </div>
   </div>
-  <div id="project" class="tab-pane fade">
-    <% @projects.each do |project| %>
-    <%= link_to project.title,project_path(skill) %>
-    <hr>
-    <% end %>
-  </div>
-  <div id="education" class="tab-pane fade">
-    <% @educations.each do |education| %>
-    <%= link_to education.school,education_path(education) %>
-    <hr>
-    <% end %>
-  </div>
-  <div id="experience" class="tab-pane fade">
-    <% @experiences.each do |experience| %>
-    <%= link_to experience.title,experience_path(experience) %>
-    <hr>
-    <% end %>
-  </div>
-</div>
 
 
 </body>
