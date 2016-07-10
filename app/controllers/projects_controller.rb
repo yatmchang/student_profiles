@@ -10,22 +10,53 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new project_params
     @profile = current_user.profile
-    @project.profile_id = @profile.id
+    @project.profile = @profile
+
     if @project.save
       redirect_to edit_user_path(current_user), notice: "Changes Saved!"
     else
       redirect_to edit_user_path(current_user), alert: "Unable To Save"
     end
-  end
 
-  def edit
+#   if @project.save
+#     flash[:notice] = "Sucessful"
+#     redirect_to user_profile_project_path(current_user, @profile, @project)
+#   else
+#     flash[:alert]= "not created!"
+#     render :new
+# >>>>>>> testing
+end
+
+def edit
+ @profile  = current_user.profile
+ @projects = current_user.projects
+ @project  = Project.find params[:id]
+end
+
+def update
+   @profile = current_user.profile
    @project = Project.find params[:id]
+  if @project.update project_params
+    redirect_to user_profile_project_path(current_user, @profile, @project), notice: "updated"
+  else
+    render :edit
   end
+end
+
+def show
+  @profile = current_user.profile
+  @project = Project.find params[:id]
+end
+def destroy
+  @project = Project.find params[:id]
+  @project.destroy
+  redirect_to current_user, notice: "destroyed"
+end
 
   def update
      @project = Project.find params[:id]
     if @project.update project_params
-      redirect_to project_path(@project), notice: "updated"
+      redirect_to current_user, notice: "updated"
     else
       render :edit
     end

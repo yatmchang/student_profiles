@@ -1,0 +1,10 @@
+<% educations.each do |education| %>
+  <h3>school: <%= education.school %></h3>
+  <h3>description: <%= education.description %></h3>
+  <h3>School Web: <%= education.link %></h3>
+  <%= image_tag education.logo.url(:medium) %>
+
+   <a href="#">Edit</a>
+   <a href="#">Delete</a>
+   <hr>
+<% end %>

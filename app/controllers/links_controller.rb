@@ -6,9 +6,9 @@ class LinksController < ApplicationController
   def create
     link = Link.new(link_params)
     user = current_user
-    link.profile_id  = user.profile
+    link.profile_id  = user.profile.id
     if link.save
-      redirect_to user_path(current_user)
+      redirect_to edit_user_path(current_user)
     else
       render :root
     end

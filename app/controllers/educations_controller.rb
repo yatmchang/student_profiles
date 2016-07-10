@@ -17,7 +17,7 @@ class EducationsController < ApplicationController
   def create
     @education = Education.new education_params
     @profile = current_user.profile
-    @education.profile_id = @profile.id
+    @education.profile = @profile
     if @education.save
       redirect_to edit_user_path(current_user), notice: "Changes Saved!"
     else
@@ -26,6 +26,9 @@ class EducationsController < ApplicationController
   end
 
   def edit
+    @profile  = current_user.profile
+    @educations = current_user.educations
+    @education  = Education.find params[:id]
   end
 
   def show
@@ -34,12 +37,12 @@ class EducationsController < ApplicationController
 
   def destroy
     @education.destroy
-    redirect_to new_education_path, notice: "Your education information has been deleted"
+    redirect_to current_user, notice: "Your education information has been deleted"
   end
 
   def update
     if @education.update education_params
-      redirect_to education_path(@education), notice: "Your information has been updated"
+      redirect_to current_user, notice: "Your information has been updated"
     else
       render :edit
     end

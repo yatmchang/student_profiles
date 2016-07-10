@@ -4,7 +4,10 @@
   <hr>
   <p>Available for hire?</p>
   <%= f.check_box :available, as: :boolean, checked_value: true, unchecked_value: false %>
+  <p>Choose a Profile Picture</p>
   <%= f.file_field :avatar %>
+  <p>Choose a Resume</p>
   <%= f.file_field :resume %>
+  <br>
   <%= f.submit %>
 <% end %>
