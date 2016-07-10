@@ -1,6 +1,5 @@
 class ProfilesController < ApplicationController
 
-<<<<<<< 1059e91f30710c107b9931f688a0921d9e65f3ea
   def new_contact
     @user = User.find params[:user_id]
     @profile = @user.profile
@@ -14,10 +13,8 @@ class ProfilesController < ApplicationController
     redirect_to user_path(@user), notice: "Message sent"
   end
 
-=======
   before_action :authenticate_user!, except: [:show, :index]
-  
->>>>>>> authorize owner feature
+
   def edit
     @user = User.find params[:user_id]
     @profile = Profile.find params[:id]
