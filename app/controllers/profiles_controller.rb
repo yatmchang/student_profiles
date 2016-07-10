@@ -1,5 +1,7 @@
 class ProfilesController < ApplicationController
 
+before_action :authenticate_user!, except: [:contact, :new_contact, :show, :index]
+
   def new_contact
     @user = User.find params[:user_id]
     @profile = @user.profile
@@ -8,12 +10,14 @@ class ProfilesController < ApplicationController
   def contact
     @user = User.find params[:user_id]
     @profile = @user.profile
-    @details = params[:profile]
-    Mailer.notify_profile_owner(@details, @profile).deliver_now
+    # byebug
+    @contact_name = params[:contact_name]
+    @contact_email = params[:contact_email]
+    @contact_message = params[:contact_message]
+    @details = {cname: @contact_name, cemail: @contact_email, cmessage: @contact_message}
+    Mailer.notify_profile_owner(@details, @profile).deliver_later
     redirect_to user_path(@user), notice: "Message sent"
   end
-
-  before_action :authenticate_user!, except: [:show, :index]
 
   def edit
     @user = User.find params[:user_id]

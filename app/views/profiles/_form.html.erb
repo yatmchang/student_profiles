@@ -1,7 +1,20 @@
-<%= simple_form_for profile, :url => {:action => "contact"}, method: :post do |f| %>
-<%= f.input :contact_name  %>
-<%= f.input :contact_email %>
-<%= f.input :contact_text, label: "Message" %>
-<%= f.button :submit, class: "btn btn-primary", value: "Send" %>
-<% end %>
+<h2><%=  "Contact " + @user.first_name.titleize %></h2>
+
 <br>
+<%= form_tag contact_path(@user), :method => :post do %>
+  <div class="form-group">
+    <%= label_tag :contact_name, "Contact Name", class: "control-label" %>
+    <%= text_field_tag :contact_name, "", class: "form-control" %>
+  <div class="form-group">
+      <%= label_tag :contact_email, "Email", class: "control-label" %>
+      <%= email_field_tag :contact_email," ", class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :contact_message, "Message", class: "control-label" %>
+      <%= text_area_tag :contact_message, "", rows: 6, class: "form-control" %>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <%= submit_tag "Submit", class: "btn btn-primary" %>
+    </div>
+<% end %>
