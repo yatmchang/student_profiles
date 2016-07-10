@@ -12,7 +12,7 @@ class ExperiencesController < ApplicationController
     @experience = Experience.new experience_params
     @experiences = Experience.order(created_at: :desc)
     @profile = current_user.profile
-    @experience.profile_id = @profile
+    @experience.profile_id = @profile.id
     if @experience.save
       redirect_to edit_user_path(current_user), notice: "Changes Saved!"
     else
