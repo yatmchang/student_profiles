@@ -37,7 +37,7 @@
         <% end %>
         <% if user_signed_in? %>
         <br>
-        <%= link_to "Add", new_skill_path %>
+        <%#= link_to "Add", user_profile_skill_path %>
         <% end %>
       </div>
 
@@ -48,7 +48,7 @@
         <% end %>
         <% if user_signed_in? %>
         <br>
-        <%= link_to "Add", new_project_path %>
+        <%#= link_to "Add", user_profile_project_path %>
         <% end %>
       </div>
       <div id="education" class="tab-pane fade">
@@ -58,7 +58,7 @@
         <% end %>
         <% if user_signed_in? %>
         <br>
-        <%= link_to "Add", new_education_path %>
+        <%#= link_to "Add", user_profile_education_path %>
         <% end %>
       </div>
       <div id="experience" class="tab-pane fade">
@@ -68,7 +68,7 @@
         <% end %>
         <% if user_signed_in? %>
         <br>
-        <%= link_to "Add", experiences_path %>
+        <%#= link_to "Add", user_profile_experiences_path %>
         <% end %>
       </div>
     </div>
