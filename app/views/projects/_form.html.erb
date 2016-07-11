@@ -1,5 +1,5 @@
 
-<%= simple_form_for [@user, @profile, @project] do |f| %>
+<%= simple_form_for [current_user, @profile, @project] do |f| %>
   <%= f.input :title %>
   <%= f.input :description %>
   <%= f.input :web_app_link %>

@@ -23,19 +23,24 @@
       <%= render "/users/form" %>
     </div>
     <div id="links" class="tab-pane fade">
+      <%= render "links/links", links: @links %>
       <%= render "links/form" %>
     </div>
 
     <div id="projects" class="tab-pane fade">
+      <%= render "projects/projects", projects: @projects %>
       <%= render "projects/form" %>
     </div>
     <div id="education" class="tab-pane fade">
+      <%= render "educations/educations", educations: @educations %>
       <%= render "/educations/form" %>
     </div>
     <div id="experience" class="tab-pane fade">
+      <%= render "experiences/experiences", experiences: @experiences %>
       <%= render "experiences/form" %>
     </div>
     <div id="skills" class="tab-pane fade">
+      <%= render "skills/skills", skills: @skills %>
       <%= render "skills/form" %>
     </div>
   </div>

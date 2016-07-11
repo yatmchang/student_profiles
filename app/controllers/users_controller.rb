@@ -6,6 +6,7 @@
   end
 
   def create
+
     @user = User.new user_params
     if @user.save
       sign_in(@user)
@@ -27,10 +28,15 @@
   def edit
     @user = current_user
     @profile = @user.profile
+    @skills = current_user.skills
     @skill = Skill.new
+    @projects = current_user.projects
     @project = Project.new
+    @educations = current_user.educations
     @education = Education.new
+    @experiences = current_user.experiences
     @experience = Experience.new
+    @links = current_user.links
     @link = Link.new
   end
 
