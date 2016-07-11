@@ -14,7 +14,7 @@
         <li class="link"><%= link_to "Available Students" %></li>
         <li class="link"><%= link_to "All Students", users_path %></li>
       </ul>
-      <% if current_page?(controller: 'users', action: 'index')%>
+      <% if current_page?(controller: 'users', action: 'index') || current_page?(controller: 'users', action: 'available')%>
         <form class="nav navbar-nav navbar-form navbar-left" role="search">
           <div class="form-group link">
             <input type="text" id="search-form" class="form-control" placeholder="Search by Name or Skill">

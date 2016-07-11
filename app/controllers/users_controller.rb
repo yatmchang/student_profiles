@@ -59,6 +59,36 @@
       @users = User.order("first_name ASC").page(params[:page]).per(15)
     # end
   end
+  def available
+    # users = User.where(available: true)
+    # @available_users =[]
+    # users.each do |user|
+    #   if user.profile.available?
+    #     @available_users << user
+    #   end
+    # end
+    # @users = @available_users.page(params[:page]).per(16)
+    @users = User.joins(:profile).where(:profiles => { :available => ['true'] }).page(params[:page]).per(9)
+
+  end
+
+  def admin
+    if current_user.is_admin?
+      @unapproved_users = User.where("approved" == false)
+    else
+      redirect_to root_path
+    end
+  end
+ def approve_user
+    @user = User.find params[:user_id]
+    @user.approved = true
+    @user.save
+    redirect_to admin_path
+    # respond_to do |format|
+    #   format.html{ redirect_to admin_path}
+    #   # format.js  {render}
+    # end
+ end
 
   private
 

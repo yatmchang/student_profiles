@@ -1,0 +1,9 @@
+
+<% @unapproved_users.each do |user| %>
+
+   <%= user.first_name %>
+   <%= link_to "Approve", approved_path(user),
+                         method: :patch,
+                         remote: true%>
+     <hr>
+  <% end %>

@@ -7,9 +7,11 @@ Rails.application.routes.draw do
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  get "/contact/:user_id" => "profiles#new_contact"
-  post "/contact/:user_id" => "profiles#contact", as: :contact
-
+  get   "/contact/:user_id"       => "profiles#new_contact"
+  post  "/contact/:user_id"       => "profiles#contact", as: :contact
+  get   "/users/admin"            => "users#admin", as: :admin
+  patch "/users/:user_id/approve" => 'users#approve_user', as: :approved
+  get   "users/available"         => 'users#available', as: :available
   resources :users, only: [:new, :create, :edit, :update, :show, :index] do
     resources :profiles, only: [:edit, :update], as: :profile  do
       resources :links, only: [:create, :update, :destroy]
