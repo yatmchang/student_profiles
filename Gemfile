@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-
+#gem 'carrierwave-aws'
+gem 'fog'
 gem 'simple_form'
 gem "bootstrap-sass"
 gem "quiet_assets"
@@ -8,8 +9,6 @@ gem 'carrierwave'
 gem "mini_magick"
 gem 'kaminari'
 gem 'jquery-infinite-pages'
-gem 'carrierwave-crop'
-
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -68,7 +67,6 @@ group :development do
   gem 'awesome_print'
 
   gem 'hirb'
-  gem "fog"
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 
 end
