@@ -5,5 +5,5 @@ $("<%= j render(:partial => 'users', :object => @users) %>")
   $('.pagination').html("That's all, folks!");
 <% else %>
   $('.pagination')
-    .html("<%=j link_to_next_page(@users, 'Next Page', :remote => true) %>");
+    .html("<%=j link_to_next_page(@users, '', :remote => true) %>");
 <% end %>
