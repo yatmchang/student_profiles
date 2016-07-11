@@ -9,7 +9,7 @@
   has_many :skills, through: :profile
   has_many :projects, through: :profile
 
-
+  
   attr_accessor :current_password
 
   validates :first_name, presence: true
