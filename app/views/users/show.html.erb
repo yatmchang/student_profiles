@@ -7,10 +7,11 @@
       <h2><%= @user.full_name %></h2>
       <p><%= @user.profile.long_pitch %></p>
 
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#contactModal">
-        Contact <%= @user.first_name.titleize %>
-      </button>
       <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <button type="button" class="btn btn-danger btn-custom btn-lg" data-toggle="modal" data-target="#contactModal">
+    Contact <%= @user.first_name.titleize %>
+    </button>
+     <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -23,7 +24,8 @@
           </div>
         </div>
       </div>
-    </div>
+
+   </div>
   </div>
 </div>
 
@@ -32,14 +34,20 @@
 
 <div class="row">
   <ul class="nav nav-tabs">
-    <li  class="active" id="skill-tab" data-userid="<%= @user.id %>" data-profileid="<%= @user.profile.id %>"><a data-toggle="tab" href="#skill">Skills</a></li>
-    <li><a data-toggle="tab" href="#project">Projects</a></li>
+    <li class="active" ><a data-toggle="tab" href="#project">Projects</a></li>
+    <li id="skill-tab" data-userid="<%= @user.id %>" data-profileid="<%= @user.profile.id %>"><a data-toggle="tab" href="#skill">Skills</a></li>
     <li><a data-toggle="tab" href="#education">Education</a></li>
     <li><a data-toggle="tab" href="#experience">Experience</a></li>
   </ul>
 
   <div class="tab-content">
-    <div id="skill" class="tab-pane tab-show-panel fade in active">
+   <div id="project" class="tab-pane tab-show-panel fade in active">
+      <br>
+      <% @projects.each do |project| %>
+      <%= render "projects/project", project: project, profile: @profile %>
+      <hr>
+      <% end %>
+    </div> <div id="skill" class="tab-pane tab-show-panel fade ">
       <br>
       <div id="progress-bar">
           <% @user.profile.skills.each do |skill| %>
@@ -52,13 +60,7 @@
           <% end %>
       </div>
     </div>
-    <div id="project" class="tab-pane tab-show-panel fade">
-      <br>
-      <% @projects.each do |project| %>
-      <%= render "projects/project", project: project, profile: @profile %>
-      <hr>
-      <% end %>
-    </div>
+    
     <div id="education" class="tab-pane tab-show-panel fade">
       <br>
       <% @educations.each do |education| %>
