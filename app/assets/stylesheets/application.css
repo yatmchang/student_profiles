@@ -22,7 +22,9 @@
    padding-top: 85px;
    margin-left: 0px;
  }
-
+ .btn-custom {
+   background: #CB0D0F;
+ }
 
 
 
@@ -90,6 +92,12 @@ footer a:hover {
    text-transform: uppercase;
    text-transform: none;
  }*/
+.short-pitch {
+    padding-right: 15px;
+    padding-left: 15px;
+    min-height: 80px;
+}
+
 
 .tab-show-panel {
  min-height: 200px;
