@@ -22,6 +22,7 @@
  }
 
 
+
  #user-name {
   font-weight: bold;
 }
@@ -48,9 +49,18 @@
  footer {
    padding: 25px 0;
    text-align: center;
-   background-color: #2A2A2A;
+   bottom: 0px;
+   position: relative;
+   width: 100%;
+   background: #2A2A2A;
  }
- footer span.copyright {
+
+footer a {
+  font-size: 15px;
+}
+
+
+ /*footer span.copyright {
    line-height: 40px;
    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
    text-transform: uppercase;
@@ -62,4 +72,4 @@
    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
    text-transform: uppercase;
    text-transform: none;
- }
+ }*/
