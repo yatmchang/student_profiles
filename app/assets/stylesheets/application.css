@@ -125,3 +125,6 @@ footer a:hover {
   font-size: 40px;
   margin-right: 15px;
 }
+.content {
+ min-height: 500px;
+}
