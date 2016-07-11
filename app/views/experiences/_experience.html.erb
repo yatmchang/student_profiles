@@ -9,9 +9,5 @@
 <% end %>
 </div>
 <p>Description: <%= experience.description %></p>
-<% if can? :manage, profile %>
-  <%= link_to "Edit", user_profile_experience_path(@user, profile, experience) %>
-  <%= link_to "Delete", user_profile_experience_path(@user, profile, experience), method: :delete, data: {confirm: "Are you sure?"} %>
-<hr />
-<% end %>
+
 <hr />

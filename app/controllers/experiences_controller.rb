@@ -33,7 +33,7 @@ class ExperiencesController < ApplicationController
 
   def destroy
     @experience.destroy
-    redirect_to experiences_path
+    redirect_to edit_user_path(current_user)
   end
 
   private

@@ -1,7 +1,6 @@
 <div class="show">
   <p><%= skill.title %></p>
   <p>Level: <%= skill.rating%>/10</p>
-
   <% if can? :manage, profile %>
     <%= link_to "Edit", user_profile_education_path(@user, profile, skill) %>
     <%= link_to "Delete", user_profile_education_path(@user, profile, skill), method: :delete,
