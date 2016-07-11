@@ -1,3 +1,5 @@
+// })
+//$(document).on('page:load',(){
 $(document).ready(function(){
 
   $("#skill-tab").click(function(){

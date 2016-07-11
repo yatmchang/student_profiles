@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row profile-header">
     <div class="avatar col-md-3">
-      <%#= image_tag @user.profile.avatar %>
+      <%#= image_tag @.profile.avatar %>
     </div>
     <div class="name-pitch col-md-9">
       <h2><%= @user.full_name %></h2>
@@ -59,14 +59,14 @@
     <div id="education" class="tab-pane tab-show-panel fade">
       <br>
       <% @educations.each do |education| %>
-      <%= link_to education.school,education_path(education) %>
+      <%= render "educations/education", education: education, profile: @profile %>
       <hr>
       <% end %>
     </div>
     <div id="experience" class="tab-pane tab-show-panel fade">
       <br>
       <% @experiences.each do |experience| %>
-      <%= link_to experience.title,experience_path(experience) %>
+      <%= render "experiences/experience", experience: experience, profile: @profile %>
       <hr>
       <% end %>
     </div>
@@ -74,5 +74,5 @@
 </div>
 
 <!-- <script>
-progressBar(75, $('#progressBar'));
+erogressBar(75, $('#progressBar'));
 </script> -->

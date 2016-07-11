@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.infinite-pages
-//= require turbolinks
+// require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
 // $(document).ready(function(){
@@ -26,7 +26,7 @@
 
 
 // })
-
+//$(document).on('page:load',(){
 $(document).ready(function(){
   // ===== Scroll to Top ====
   $(window).scroll(function() {
