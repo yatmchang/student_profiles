@@ -53,10 +53,17 @@
    position: relative;
    width: 100%;
    background: #2A2A2A;
+   color: #fff;
  }
 
 footer a {
   font-size: 15px;
+  color: #fff;
+}
+
+footer a:hover {
+  color: pink;
+  text-decoration: none;
 }
 
 
