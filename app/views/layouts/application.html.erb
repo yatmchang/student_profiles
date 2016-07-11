@@ -8,14 +8,15 @@
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   <script>
   $(document).ready(function(){
-    "<%# if current_page?(controller: 'users', action: 'index')%>"
-    '<%# @users = User.order('first_name ASC') %>'
-    '<%# else %>'
-    '<%# @users = User.where('available' = true) %>'
-    '<%# end %>'
-    $(".nav-bar").bind("#search-form", "keyup", function(){
+    <% if current_page?(controller: 'users', action: 'index')%>
+    <% @users = User.order('first_name ASC') %>
+    <% elsif current_page?(controller: 'users', action: 'available') %>
+    <% @users = User.joins(:profile).where(:profiles => { :available => ['true'] }) %>
+    <% else %>
+    <% @users = User.all %>
+    <% end %>
     $('#search-form').bind("keyup", function(){
-    $('.render').html("<%= j render :partial => 'users/users', :object => @users = User.order('first_name ASC') %>");
+    $('.render').html("<%= j render :partial => 'users/users', :object => @users %>");
     var searchTerm = $(this).val().toLowerCase();
     var students = $('.search-users');
     students.hide();
@@ -46,33 +47,33 @@
   <br>
 
   <footer>
-    <div class="row">
-      <div class="col-md-4">
-        <ul><%= link_to "Available Students" %></ul>
-        <ul><%= link_to "All Students", users_path %></ul>
-      </div>
-      <div class="col-md-4">
-        <ul class="list-inline social-buttons">
-          <li><a href="#"><i class="fa fa-twitter fa-lg"></i></a>
-          </li>
-          <li><a href="#"><i class="fa fa-facebook fa-lg"></i></a>
-          </li>
-          <li><a href="#"><i class="fa fa-linkedin fa-lg"></i></a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-4">
-        <ul class="list-inline quicklinks">
-          <li><a href="http://codecore.ca">Contact CodeCore</a>
-          </li>
-          <li><a href="#">Privacy Policy</a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-12">
-        <span class="copyright">Copyright &copy; Cohort 13 CodeCore 2016</span>
-      </div>
+  <div class="row">
+    <div class="col-md-4">
+      <ul><%= link_to "Available Students", available_path %></ul>
+      <ul><%= link_to "All Students", users_path %></ul>
     </div>
+    <div class="col-md-4">
+      <ul class="list-inline social-buttons">
+        <li><a href="https://twitter.com/codecoreyvr" target="_blank"><i class="fa fa-twitter fa-lg"></i></a>
+        </li>
+        <li><a href="https://www.facebook.com/CodeCoreBootcamp/?fref=ts" target="_blank"><i class="fa fa-facebook fa-lg"></i></a>
+        </li>
+        <li><a href="https://www.linkedin.com/company/codecore-bootcamp" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <ul class="list-inline quicklinks">
+        <li><a href="https://codecore.ca/program_applications/new" target="_blank">Contact CodeCore</a>
+        </li>
+        <li><a href="https://codecore.ca/policies" target="_blank">Privacy Policy</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-12">
+      <span class="copyright">Copyright &copy; Cohort 13 CodeCore 2016</span>
+    </div>
+  </div>
 </footer>
 
 </body>
