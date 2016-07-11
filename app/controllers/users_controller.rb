@@ -52,8 +52,11 @@
   end
 
   def index
-    @users = User.order("first_name ASC").page(params[:page]).per(16)
-    # @users = User.all
+    # if params[available: true]
+    #   @users = User.where(available: true)
+    # else
+      @users = User.order("first_name ASC").page(params[:page]).per(16)
+    # end
   end
 
   private
