@@ -61,18 +61,10 @@
     </div>
 
     <div id="education" class="tab-pane tab-show-panel fade">
-      <br>
-      <% @educations.each do |education| %>
-      <%= render "educations/education", education: education, profile: @profile %>
-      <hr>
-      <% end %>
+      <%= render "educations/educations", educations: @educations %>
     </div>
     <div id="experience" class="tab-pane tab-show-panel fade">
-      <br>
-      <% @experiences.each do |experience| %>
-      <%= render "experiences/experience", experience: experience, profile: @profile %>
-      <hr>
-      <% end %>
+      <%= render "experiences/experiences", experiences: @experiences %>
     </div>
   </div>
 </div>

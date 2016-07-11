@@ -7,6 +7,6 @@ $ ->
   $('.infinite-table').infinitePages
     # debug: true
     loading: ->
-      $(this).text('Loading next page...')
+      $(this).text('')
     error: ->
-      $(this).button('There was an error, please try again')
+      $(this).button('')

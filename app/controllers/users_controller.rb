@@ -53,21 +53,10 @@
   end
 
   def index
-    # if params[available: true]
-    #   @users = User.where(available: true)
-    # else
-      @users = User.order("first_name ASC").page(params[:page]).per(15)
-    # end
+      @users = User.order("first_name ASC").page(params[:page]).per(16)
   end
   def available
-    # users = User.where(available: true)
-    # @available_users =[]
-    # users.each do |user|
-    #   if user.profile.available?
-    #     @available_users << user
-    #   end
-    # end
-    # @users = @available_users.page(params[:page]).per(16)
+
     @users = User.joins(:profile).where(:profiles => { :available => ['true'] }).page(params[:page]).per(9)
 
   end
