@@ -29,22 +29,19 @@
   <br>
   <br>
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#basicinfo">Basic Information</a></li>
-    <li id="skill-tab" data-userid="<%= @user.id %>" data-profileid="<%= @user.profile.id %>"><a data-toggle="tab" href="#skill">Skills</a></li>
+    <li  class="active" id="skill-tab" data-userid="<%= @user.id %>" data-profileid="<%= @user.profile.id %>"><a data-toggle="tab" href="#skill">Skills</a></li>
     <li><a data-toggle="tab" href="#project">Projects</a></li>
     <li><a data-toggle="tab" href="#education">Education</a></li>
     <li><a data-toggle="tab" href="#experience">Experience</a></li>
   </ul>
 
   <div class="tab-content">
-    <div id="basicinfo" class="tab-pane fade in active">
-    </div>
-    <div id="skill" class="tab-pane fade">
+    <div id="skill" class="tab-pane tab-show-panel fade in active">
       <br>
       <div id="progress-bar">
           <% @user.profile.skills.each do |skill| %>
           <div id="omg">
-            <p><%= skill.title %>: &nbsp; </p>
+            <span class="skill-type"><%= skill.title %>: &nbsp; </span>
             <div id="<%= dom_id(skill) %>" class="progressBarElement tiny-green" data-skill-rating="<%= skill.rating %>">
             </div>
           </div>
@@ -52,19 +49,22 @@
           <% end %>
       </div>
     </div>
-    <div id="project" class="tab-pane fade">
+    <div id="project" class="tab-pane tab-show-panel fade">
+      <br>
       <% @projects.each do |project| %>
       <%= render "projects/project", project: project, profile: @profile %>
       <hr>
       <% end %>
     </div>
-    <div id="education" class="tab-pane fade">
+    <div id="education" class="tab-pane tab-show-panel fade">
+      <br>
       <% @educations.each do |education| %>
       <%= link_to education.school,education_path(education) %>
       <hr>
       <% end %>
     </div>
-    <div id="experience" class="tab-pane fade">
+    <div id="experience" class="tab-pane tab-show-panel fade">
+      <br>
       <% @experiences.each do |experience| %>
       <%= link_to experience.title,experience_path(experience) %>
       <hr>

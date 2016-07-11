@@ -59,11 +59,11 @@
 
 footer a {
   font-size: 15px;
-  color: #fff;
+  color: #555;
 }
 
 footer a:hover {
-  color: pink;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -81,3 +81,7 @@ footer a:hover {
    text-transform: uppercase;
    text-transform: none;
  }*/
+
+.tab-show-panel {
+ min-height: 200px;
+}
