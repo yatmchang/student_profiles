@@ -24,6 +24,8 @@
     @projects = @user.profile.projects
     @educations = @user.profile.educations
     @experiences = @user.profile.experiences
+    @links = @user.profile.links
+    @resume = @user.profile.resume
   end
 
   def edit
