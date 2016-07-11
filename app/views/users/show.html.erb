@@ -41,7 +41,7 @@
       <div id="progress-bar">
           <% @user.profile.skills.each do |skill| %>
           <div id="omg">
-            <p><%= skill.title %>: &nbsp; </p>
+            <span class="skill-type"><%= skill.title %>: &nbsp; </span>
             <div id="<%= dom_id(skill) %>" class="progressBarElement tiny-green" data-skill-rating="<%= skill.rating %>">
             </div>
           </div>
