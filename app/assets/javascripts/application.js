@@ -16,6 +16,8 @@
 //= require jquery.jcrop
 // require turbolinks
 //= require bootstrap-sprockets
+//= require jquery
+//= require jquery.jcrop
 //= require_tree .
 // $(document).ready(function(){
 

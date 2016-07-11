@@ -1,6 +1,5 @@
 class ProfilesController < ApplicationController
-
-before_action :authenticate_user!, except: [:contact, :new_contact, :show, :index]
+  before_action :authenticate_user!, except: [:contact, :new_contact, :show, :index]
 
   def new_contact
     @user = User.find params[:user_id]
