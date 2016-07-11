@@ -92,6 +92,12 @@ footer a:hover {
    text-transform: uppercase;
    text-transform: none;
  }*/
+.short-pitch {
+    padding-right: 15px;
+    padding-left: 15px;
+    min-height: 80px;
+}
+
 
 .tab-show-panel {
  min-height: 200px;
