@@ -1,10 +1,13 @@
 
 <%= simple_form_for [current_user, @profile, @project] do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :web_app_link %>
-  <%= f.input :github_link%>
-  <%= f.input :logo %>
-  <%= f.association :project_tags, as: :check_boxes %>
-  <%= f.button :submit, class: "btn-primary" %>
+  <%= f.input :title, :label => "Project Title" %>
+  <%= f.input :description, :label => "Project Description" %>
+  <%= f.input :web_app_link, :label => "Project URL" %>
+  <%= f.input :github_link, :label => "Github Link" %>
+  <hr>
+  <%= f.input :logo, :label => "Project Logo" %>
+  <hr>
+  <%= f.association :project_tags, as: :check_boxes, :label => "Tags" %>
+  <hr>
+  <%= f.button :submit, class: "btn btn-default" %>
 <% end %>

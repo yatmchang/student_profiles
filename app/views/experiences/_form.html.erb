@@ -1,14 +1,15 @@
-<h1>New Experience</h1>
 <%#= @experience.errors.full_messages.join(", ") if @experience %>
 <%= simple_form_for [@user, @profile, @experience] do |f| %>
   <div class="text-left">
-    <%= f.input :job_title %>
-    <%= f.input :company %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date, {include_blank: true, default: nil} %>
-    <%= f.label :current %>
-    <%= f.check_box :current, as: :boolean, checked_value: true, unchecked_value: false %>
-    <%= f.input :description %>
+    <%= f.input :job_title, :label => "Job Title" %>
+    <%= f.input :company, :label => "Company" %>
+    <%= f.input :start_date, :label => "Start Date" %>
+    <%= f.input :end_date, :label => "End Date", include_blank: true, default: nil %><br>
+    <%= f.label :current, :label => "Are you currently employed?" %>
+    <%= f.check_box :current, as: :boolean, checked_value: true, unchecked_value: false %><br>
+    <br>
+    <%= f.input :description, :label => "Description" %>
   </div>
-  <%= f.button :submit, class: "btn-primary" %>
+  <hr>
+  <%= f.button :submit, class: "btn btn-default" %>
 <% end %>

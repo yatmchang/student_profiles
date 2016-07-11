@@ -1,10 +1,11 @@
 
 <%= simple_form_for @user do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :email %>
-  <%= f.input :current_password %>
-  <%= f.input :password %>
-  <%= f.input :password_confirmation %>
+  <%= f.input :first_name, :label => "First Name" %>
+  <%= f.input :last_name, :label => "Last Name" %>
+  <%= f.input :email, :label => "Email" %>
+  <%= f.input :current_password, :label => "Current Password" %>
+  <%= f.input :password, :label => "Password" %>
+  <%= f.input :password_confirmation, :label => "Password Confirmation" %>
+  <hr>
   <%= f.button :submit, class: "btn btn-default" %>
 <% end %>

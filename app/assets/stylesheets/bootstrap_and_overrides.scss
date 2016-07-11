@@ -11,22 +11,23 @@ body {
   text-align: center;
   font-weight: bold;
 }
+
 .my-school {
     width: 400px;
     display: block;
 }
+
 .my-description {
     width: 800px;
     height: 100px;
     display: block;
 }
-.my-logo {
 
-}
 .my-link {
     display: block;
     width: 300px;
 }
+
 .dropdown{
   margin-top: 10px;
 }
@@ -35,28 +36,11 @@ body {
     display: block;
     width: 300px;
 }
+
 .my-rating {
     display: block;
     width: 300px;
 }
-
-input {
-    color: #FFA725;
-}
-
-.btn-primary {
-    color: #fff;
-    background-color: #1BB4C7;
-    border-color: #fff;
-}
-.btn-primary:hover {
-    color: #fff;
-    background-color: #FFA725;
-    border-color: #fff;
-}
-
-
-
 
 .navbar-default {
   background-color: #CB0D0F;

@@ -1,4 +1,4 @@
-<div class="edit-heading">
+<div class="container edit-heading">
   <h1>Edit Your Information</h1>
 </div>
 
@@ -16,32 +16,31 @@
 
 <div class="container" >
   <div class="tab-content">
-    <div class="tab-content">
-      <div id="basicinfo" class="tab-pane fade in active">
-        <%= render "/profiles/basic" %>
-      </div>
-      <div id="accountinfo" class="tab-pane fade">
-        <%= render "/users/form" %>
-      </div>
-      <div id="links" class="tab-pane fade">
-        <%= render "links/links", links: @links %>
-        <%= render "links/form" %>
-      </div>
-      <div id="projects" class="tab-pane fade">
-        <%= render "projects/projects", projects: @projects %>
-        <%= render "projects/form" %>
-      </div>
-      <div id="education" class="tab-pane fade">
-        <%= render "educations/educations", educations: @educations %>
-        <%= render "/educations/form" %>
-      </div>
-      <div id="experience" class="tab-pane fade">
-        <%= render "experiences/experiences", experiences: @experiences %>
-        <%= render "experiences/form" %>
-      </div>
-      <div id="skills" class="tab-pane fade">
-        <%= render "skills/skills", skills: @skills %>
-      </div>
+    <div id="basicinfo" class="tab-pane fade in active">
+      <%= render "/profiles/basic" %>
+    </div>
+    <div id="accountinfo" class="tab-pane fade">
+      <%= render "/users/form" %>
+    </div>
+    <div id="links" class="tab-pane fade">
+      <%= render "links/links", links: @links %>
+      <%= render "links/form" %>
+    </div>
+    <div id="projects" class="tab-pane fade">
+      <%= render "projects/projects", projects: @projects %>
+      <%= render "projects/form" %>
+    </div>
+    <div id="education" class="tab-pane fade">
+      <%= render "educations/educations", educations: @educations %>
+      <%= render "/educations/form" %>
+    </div>
+    <div id="experience" class="tab-pane fade">
+      <%= render "experiences/experiences", experiences: @experiences %>
+      <%= render "experiences/form" %>
+    </div>
+    <div id="skills" class="tab-pane fade">
+      <%= render "skills/skills", skills: @skills %>
+      <%= render "skills/form" %>
     </div>
   </div>
 </div>
