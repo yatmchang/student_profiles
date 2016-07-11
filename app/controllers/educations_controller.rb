@@ -37,7 +37,10 @@ class EducationsController < ApplicationController
 
   def destroy
     @education.destroy
-    redirect_to current_user, notice: "Your education information has been deleted"
+    respond_to do |format|
+      format.html {render current_user, notice: "Your education information has been deleted"}
+      format.json { head :no_content }
+    end
   end
 
   def update

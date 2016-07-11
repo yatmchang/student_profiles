@@ -44,4 +44,69 @@ $(document).ready(function(){
   });
 
   $("span.admin").click(function(){$(this).hide()})
+
+  $(".edu-del-link").click(function(){
+    var user = $(this).data("user");
+    var profile = $(this).data("profile");
+    var education = $(this).data("id");
+    var that = $(this);
+    console.log('/users/' + user + "/" + profile + "/" + education);
+    $.ajax({
+      method: "DELETE",
+      url: '/users/' + user + "/profiles/" + profile + "/educations/" + education + ".json",
+      error: function(){
+        alert("nope");
+      },
+      success: function(){
+        that.fade(500);
+      }
+    })
+  }) 
+
+  $(".edu-edit-link").click(function(){
+      var user = $(this).data("user");
+      var profile = $(this).data("profile");
+      var education = $(this).data("id");
+      var that = $(this);
+      console.log('/users/' + user + "/" + profile + "/" + education);
+      // toggle modal here
+      $("#hook-point").append(
+        "<input id='input-1' type='text'><br><input id='date-1' type='date'><br><input id='date-2' type='date'><br><input id='input-2' type='text'><br><input id='submit' type='submit'>"
+      );
+      $("#edit-modal").modal("toggle")
+
+      $.ajax({
+        method: "PATCH",
+        url: '/users/' + user + "/profiles/" + profile + "/educations/" + education + ".json",
+        error: function(){
+          alert("nope");
+        },
+        success: function(){
+          alert("edit")
+        }
+      })
+    }) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
