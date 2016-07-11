@@ -25,14 +25,7 @@
       </div>
     </div>
   </div>
-  <div class="avatar" style="">
-    <%#= image_tag @user.profile.avatar %>
-  </div>
-  <div class="name-pitch">
-    <h2><%= @user.full_name %></h2>
-    <!-- Modal -->
-    <%= link_to "Contact " + @user.first_name.titleize, contact_path(@user)%>
-  </div>
+</div>
   <br>
   <br>
   <ul class="nav nav-tabs">
@@ -42,29 +35,6 @@
     <li><a data-toggle="tab" href="#education">Education</a></li>
     <li><a data-toggle="tab" href="#experience">Experience</a></li>
   </ul>
-
-  <div class="tab-content">
-    <div id="skill" class="tab-pane fade in active">
-      <% @skills.each do |skill| %>
-        <%= render "skills/skill", skill: skill, profile: @profile %>
-      <% end %>
-    </div>
-    <div id="project" class="tab-pane fade">
-      <% @projects.each do |project| %>
-      <%= render "projects/project", project: project, profile: @profile %>
-      <% end %>
-    </div>
-    <div id="education" class="tab-pane fade">
-      <% @educations.each do |education| %>
-      <%= render "educations/education", education: education, profile: @profile %>
-      <% end %>
-    </div>
-    <div id="experience" class="tab-pane fade">
-      <% @experiences.each do |experience| %>
-      <%= render "experiences/experience", experience: experience, profile: @profile %>
-      <hr />
-      <% end %>
-
 
   <div class="tab-content">
     <div id="basicinfo" class="tab-pane fade in active">
