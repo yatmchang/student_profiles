@@ -8,6 +8,7 @@ gem 'carrierwave'
 gem "mini_magick"
 gem 'kaminari'
 gem 'jquery-infinite-pages'
+gem 'carrierwave-crop'
 
 
 

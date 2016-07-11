@@ -6,6 +6,8 @@
   <%= f.check_box :available, as: :boolean, checked_value: true, unchecked_value: false %>
   <p>Choose a Profile Picture</p>
   <%= f.file_field :avatar %>
+  <%= f.previewbox :avatar %>
+  <%= f.cropbox :avatar %>
   <p>Choose a Resume</p>
   <%= f.file_field :resume %>
   <br>

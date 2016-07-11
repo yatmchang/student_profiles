@@ -1,5 +1,5 @@
 class ExperiencesController < ApplicationController
-  before_action :find_experience, only: [:update, :destroy]
+  before_action :find_experience, only: [:update]
   before_action :authenticate_user!, except: [:index]
   before_action :authorize_owner, only: [:edit, :update, :destroy]
 
@@ -33,7 +33,7 @@ class ExperiencesController < ApplicationController
 
   def destroy
     @experience.destroy
-    redirect_to experiences_path
+    redirect_to edit_user_path(current_user)
   end
 
   private

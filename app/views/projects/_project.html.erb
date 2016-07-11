@@ -6,10 +6,5 @@
 
 <p>Tags: <%= project.project_tags.map {|t| t.title.capitalize }.join(", ") %></p>
 
-<% if can? :manage, profile %>
-  <%= link_to "Edit", user_profile_education_path(@user, profile, project) %>
-  <%= link_to "Delete", user_profile_education_path(@user, profile, project),
-                      method: :delete,
-                      data:   {confirm: "Are you sure?"} %>
-<% end %>
+
 <hr />
