@@ -7,7 +7,7 @@
       <h2><%= @user.full_name %></h2>
       <p><%= @user.profile.long_pitch %></p>
 
-    <button type="button" class="btn btn-danger btn-custom btn-lg" data-toggle="modal" data-target="#contactModal">
+    <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#contactModal">
     Contact <%= @user.first_name.titleize %>
     </button>
      <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -59,7 +59,7 @@
           <% end %>
       </div>
     </div>
-    
+
     <div id="education" class="tab-pane tab-show-panel fade">
       <br>
       <% @educations.each do |education| %>

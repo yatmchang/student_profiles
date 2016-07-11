@@ -1,18 +1,19 @@
 <%#= @education.errors.full_messages.join(", ") %>
 <%= simple_form_for [@user, @profile, @education] do |f| %>
-<%= f.input :school, placeholder: "Please enter your school information", input_html: {class:"my-school"}  %>
+<%= f.input :school, :label => "School Name", placeholder: "Please enter your school information.", input_html: {class:"my-school"}  %>
 <br>
-<%= f.input :start_date %>
+<%= f.input :start_date, :label => "Start Date" %>
 <br>
-<%= f.input :end_date, {include_blank: true, default: nil} %>
+<%= f.input :end_date, :label => "End Date", include_blank: true, default: nil %>
 <br>
-<%= f.label :current %>
-<%= f.check_box :current, as: :boolean, checked_value: true, unchecked_value: false %>
+<%= f.label :current, :label => "Are you currently attending?" %>
+<%= f.check_box :current, as: :boolean, checked_value: true, unchecked_value: false %><br>
+<br>
 <%= f.input :description, placeholder: "Is there anything you want to add regarding your school experience?", input_html: {class:"my-description"} %>
+<hr>
+<%= f.file_field :logo, :label => "School Logo" %>
+<hr>
+<%= f.input :link, :label => "Related Links", input_html: {class:"my-link"}  %>
 <br>
-<div style="font-weight:bold;">Logo </div><%= f.file_field :logo %>
-<br>
-<%= f.input :link, placeholder: "Related links", input_html: {class:"my-link"}  %>
-<br>
-<%= f.button :submit, class: "btn btn-primary" %>
+<%= f.button :submit, class: "btn btn-default" %>
 <% end %>
