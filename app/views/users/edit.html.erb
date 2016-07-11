@@ -19,14 +19,13 @@
     <div id="basicinfo" class="tab-pane fade in active">
       <%= render "/profiles/basic" %>
     </div>
-   <div id="accountinfo" class="tab-pane fade">
+    <div id="accountinfo" class="tab-pane fade">
       <%= render "/users/form" %>
     </div>
     <div id="links" class="tab-pane fade">
       <%= render "links/links", links: @links %>
       <%= render "links/form" %>
     </div>
-
     <div id="projects" class="tab-pane fade">
       <%= render "projects/projects", projects: @projects %>
       <%= render "projects/form" %>
@@ -41,7 +40,7 @@
     </div>
     <div id="skills" class="tab-pane fade">
       <%= render "skills/skills", skills: @skills %>
-      <%= render "skills/form" %>
+    </div>
     </div>
   </div>
 </div>

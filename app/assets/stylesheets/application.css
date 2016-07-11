@@ -18,7 +18,9 @@
 
  body {
    padding-top: 115px;
+   margin-left: 0px;
  }
+
 
 
  #user-name {
@@ -43,3 +45,38 @@
    float: right;
    width: 73%;
  }
+
+ footer {
+   padding: 25px 0;
+   text-align: center;
+   bottom: 0px;
+   position: relative;
+   width: 100%;
+   background: #2A2A2A;
+   color: #fff;
+ }
+
+footer a {
+  font-size: 15px;
+  color: #fff;
+}
+
+footer a:hover {
+  color: pink;
+  text-decoration: none;
+}
+
+
+ /*footer span.copyright {
+   line-height: 40px;
+   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   text-transform: uppercase;
+   text-transform: none;
+ }
+ footer ul.quicklinks {
+   margin-bottom: 0;
+   line-height: 40px;
+   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   text-transform: uppercase;
+   text-transform: none;
+ }*/

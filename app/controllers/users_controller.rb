@@ -8,6 +8,7 @@
   def create
 
     @user = User.new user_params
+    @skill = Skill.new
     if @user.save
       sign_in(@user)
       redirect_to root_path, notice: "You're now signed up!"

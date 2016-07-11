@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :profiles, only: [:edit, :update], as: :profile  do
       resources :links, only: [:create, :update, :destroy]
       resources :educations, only: [:create, :update, :destroy]
-      resources :skills, only: [:create, :update, :destroy]
+      resources :skills, only: [:show, :index, :create, :update, :destroy]
       resources :experiences, only: [:create, :edit, :update, :destroy]
       resources :projects, only: [:create, :update, :destroy, :show, :edit]
     end
