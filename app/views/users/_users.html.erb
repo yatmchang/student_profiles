@@ -1,5 +1,5 @@
 <% @users.each do |user| %>
-  <div id="user" class="col-md-3 text-center search-users">
+  <div id="user" class="col-md-4 text-center search-users">
     <div id="user-image">
       <%= link_to image_tag(ref="user.png", :class => "img-circle", :style => "width: 200px"), user_path(user) %><br>
       <%#= image_tag(user.avatar.url(:large)) %>
@@ -8,7 +8,7 @@
     <%= "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." %>
     <% user.profile.skills.each do |skill| %>
     <div>
-      <span style="display: none;"><%= skill.title %></span> 
+      <span style="display: none;"><%= skill.title %></span>
     </div>
     <% end %>
     <%#= user.profile.short_pitch %>
