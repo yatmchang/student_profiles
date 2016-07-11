@@ -2,7 +2,9 @@
 @import "bootstrap";
 
 body {
-  color: #1BB4C7;
+  color: black;
+  font-family: 'Open Sans', 'Verdana', 'Helvetica', sans-serif;
+  letter-spacing: 1px;
 }
 
 #heading {
@@ -28,9 +30,6 @@ body {
 .dropdown{
   margin-top: 10px;
 }
-// custom navbar css
-
-
 
 .my-skill {
     display: block;
@@ -57,32 +56,41 @@ input {
 }
 
 
-a {
-  color: #1BB4C7;
-}
+
 
 .navbar-default {
   background-color: #CB0D0F;
-  min-height: 115px;
+  border: 0px solid transparent;
+//   display: inline-block;
+//   float: none;
 }
 
-.navbar-default .navbar-nav > li > a  {
+.navbar-default .navbar-nav > li > a {
+  margin-top: 7px;
   color: white;
-  text-transform: uppercase;
 }
-.navbar-nav > li > a {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  line-height: 20px;
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: #800000;
 }
- .navbar-names {
-    color: white;
-    position: relative;
-    display: block;
-    padding: 10px 15px;
-    cursor: hand;
-    text-decoration: none;
+.navbar-default .navbar-nav > li > a:focus {
+  color: white;
 }
-.navbar-right {
-  margin-right: 111px;
+
+.navbar-default .navbar-nav .link {
+  margin-top: 12px;
+}
+
+.navbar-default .navbar-nav .form-group {
+  padding-top: 6px;
+}
+
+.navbar-form .form-control {
+  padding: 6px 20px;
+  width: 200px;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  background-color: #CB0D0F;
+  color: white;
 }
