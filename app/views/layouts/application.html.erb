@@ -8,12 +8,12 @@
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   <script>
   $(document).ready(function(){
-    '<%# if current_page?(controller: 'users', action: 'index') %>'
+    "<%# if current_page?(controller: 'users', action: 'index')%>"
     '<%# @users = User.order('first_name ASC') %>'
     '<%# else %>'
     '<%# @users = User.where('available' = true) %>'
     '<%# end %>'
-    // $(".nav-bar").bind("#search-form", "keyup", function(){
+    $(".nav-bar").bind("#search-form", "keyup", function(){
     $('#search-form').bind("keyup", function(){
     $('.render').html("<%= j render :partial => 'users/users', :object => @users = User.order('first_name ASC') %>");
     var searchTerm = $(this).val().toLowerCase();

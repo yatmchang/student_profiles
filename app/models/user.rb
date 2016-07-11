@@ -2,7 +2,6 @@
   has_secure_password
 
   has_one :profile, dependent: :destroy
-
   has_many :links, through: :profile
   has_many :experiences, through: :profile
   has_many :educations, through: :profile
