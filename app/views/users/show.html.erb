@@ -54,7 +54,7 @@
     </div>
     <div id="project" class="tab-pane fade">
       <% @projects.each do |project| %>
-      <%= link_to project.title,project_path(skill) %>
+      <%= render "projects/project", project: project, profile: @profile %>
       <hr>
       <% end %>
     </div>
