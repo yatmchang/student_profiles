@@ -1,8 +1,12 @@
 <% @users.each do |user| %>
   <div id="user" class="col-md-4 text-center search-users">
     <div id="user-image">
-      <%= link_to image_tag(ref="user.png", :class => "img-circle", :style => "width: 200px"), user_path(user) %><br>
-    </div>
+      <% if user.profile.avatar.blank? %>
+        <%= link_to image_tag(ref="user.png", :class => "img-circle", :style => "width: 200px"), user_path(user) %><br>
+      <% else %>
+        <%= image_tag(user.profile.avatar.url(:medium), class: "img-circle", :style => "width: 200px") %>
+      <% end %>
+      </div>
     <h4><%= link_to user.full_name, user_path(user) %></h4>
     <div class="short-pitch"><p><%= user.profile.short_pitch %></p></div>
     <% user.profile.skills.each do |skill| %>
