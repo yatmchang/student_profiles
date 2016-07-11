@@ -53,11 +53,12 @@
   end
 
   def index
-      @users = User.order("first_name ASC").page(params[:page]).per(16)
+      @users = User.where(approved: true).order("first_name ASC").page(params[:page]).per(16)
   end
+
   def available
 
-    @users = User.joins(:profile).where(:profiles => { :available => ['true'] }).page(params[:page]).per(9)
+    @users = User.where(approved: true).joins(:profile).where(:profiles => { :available => ['true'] }).page(params[:page]).per(9)
 
   end
 

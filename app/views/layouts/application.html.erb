@@ -9,9 +9,9 @@
   <script>
   $(document).ready(function(){
     <% if current_page?(controller: 'users', action: 'index')%>
-    <% @users = User.order('first_name ASC') %>
+    <% @users = User.where(approved: true).order('first_name ASC') %>
     <% elsif current_page?(controller: 'users', action: 'available') %>
-    <% @users = User.joins(:profile).where(:profiles => { :available => ['true'] }) %>
+    <% @users = User.where(approved: true).joins(:profile).where(:profiles => { :available => ['true'] }) %>
     <% else %>
     <% @users = User.all %>
     <% end %>

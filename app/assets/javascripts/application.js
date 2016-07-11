@@ -16,8 +16,6 @@
 //= require jquery.jcrop
 // require turbolinks
 //= require bootstrap-sprockets
-//= require jquery
-//= require jquery.jcrop
 //= require_tree .
 // $(document).ready(function(){
 
@@ -44,4 +42,6 @@ $(document).ready(function(){
       scrollTop: 0 // Scroll to top of body
     }, 500);
   });
+
+  $("span.admin").click(function(){$(this).hide()})
 });
