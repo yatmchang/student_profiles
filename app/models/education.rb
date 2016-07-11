@@ -39,5 +39,6 @@ class Education < ActiveRecord::Base
   end
 
   mount_uploader :logo, AvatarUploader
+  crop_uploaded :avatar
 
 end

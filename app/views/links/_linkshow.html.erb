@@ -1,0 +1,16 @@
+
+  <% if links.first.Github%>
+    <%= link_to fa_icon("github"),    href="#{links.first.Github}",class: "link-icon" %>
+  <% end %>
+
+  <% if links.first.Twitter %>
+    <%= link_to fa_icon("twitter"),   herf="#{links.first.Twitter}",class: "link-icon"%>
+  <% end %>
+
+  <% if links.first.LinkedIn%>
+    <%= link_to fa_icon("linkedin"),  "#{links.first.LinkedIn}",class: "link-icon"%>
+  <%end  %>
+
+  <% if resume != nil %>
+    <%= link_to fa_icon("download"),  "#{resume}", class: "link-icon"%>
+  <%end  %>

@@ -1,3 +1,4 @@
+<%# if current_user.approved || current_user.id != @user.id || current_user.is_admin?%>
 <div class="container">
   <div class="row profile-header">
     <div class="avatar col-md-3">
@@ -6,6 +7,13 @@
     <div class="name-pitch col-md-9">
       <h2><%= @user.full_name %></h2>
       <p><%= @user.profile.long_pitch %></p>
+
+<div class="">
+    <% if !@links.blank? %>
+      <%= render "links/linkshow", links: @links, resume: @resume %>
+    <% end %>
+</div>
+
 
     <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#contactModal">
     Contact <%= @user.first_name.titleize %>
@@ -23,7 +31,6 @@
           </div>
         </div>
       </div>
-
    </div>
   </div>
 </div>
@@ -68,3 +75,6 @@
   </div>
 </div>
 </div>
+<%# else %>
+  <h2>Please wait to be approved</h2>
+<% #end %>

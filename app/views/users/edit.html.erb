@@ -1,3 +1,4 @@
+<% if current_user.approved || current_user.is_admin? %>
 <div class="container edit-heading">
   <h1>Edit Your Information</h1>
 </div>
@@ -24,7 +25,9 @@
       </div>
       <div id="links" class="tab-pane fade">
         <%= render "links/links", links: @links %>
+        <% if @links.blank? %>
         <%= render "links/form" %>
+        <% end %>
       </div>
       <div id="projects" class="tab-pane fade">
         <%= render "projects/projects", projects: @projects %>
@@ -45,3 +48,6 @@
     </div>
   </div>
 </div>
+<% else %>
+  <h2>Please wait to be approved</h2>
+<% end %>

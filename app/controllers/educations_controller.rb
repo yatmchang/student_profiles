@@ -51,7 +51,7 @@ class EducationsController < ApplicationController
   private
 
   def education_params
-    params.require(:education).permit(:school, :description, :logo, :link, :start_date, :end_date, :current)
+    params.require(:education).permit(:avatar, :avatar_crop_x, :avatar_crop_y, :avatar_crop_w, :avatar_crop_h, :school, :description, :logo, :link, :start_date, :end_date, :current)
   end
 
   def find_education

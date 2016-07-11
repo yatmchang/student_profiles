@@ -75,7 +75,7 @@ end
   private
 
   def project_params
-     params.require(:project).permit(:title, :description, :web_app_link, :github_link, :logo, {project_tag_ids: []})
+     params.require(:project).permit(:avatar, :avatar_crop_x, :avatar_crop_y, :avatar_crop_w, :avatar_crop_h, :title, :description, :web_app_link, :github_link, :logo, {project_tag_ids: []})
   end
 
   def authorize_owner

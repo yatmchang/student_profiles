@@ -1,12 +1,12 @@
 <%= simple_form_for [@user, @profile, @link] do |f| %>
   <%= f.label :title, label: "Github", required: false %>
-  <%= f.input :href, placeholder: "URL", required: false, label: false %>
+  <%= f.input :Github, placeholder: "URL", required: false, label: false %>
   <hr>
   <%= f.label :title, label: "Twitter", required: false %>
-  <%= f.input :href, placeholder: "URL", required: false, label: false %>
+  <%= f.input :Twitter, placeholder: "URL", required: false, label: false %>
   <hr>
   <%= f.label :title, label: "LinkedIn", required: false %>
-  <%= f.input :href, placeholder: "URL", required: false, label: false %>
+  <%= f.input :LinkedIn, placeholder: "URL", required: false, label: false %>
   <hr>
   <%= f.button :submit, class: "btn btn-default" %>
 <% end %>

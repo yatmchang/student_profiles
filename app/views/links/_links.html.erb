@@ -1,6 +1,8 @@
-<% links.each do |link| %>
-  <h3><a href="<%= link.href %>"><%= link.title %></a></h3>
+
+   <% if !links.blank? %>
+   <h3>Github <%= link_to "#{links.first.Github}",    "#{links.first.Github}" %>   </h3>
+   <h3>Twitter <%= link_to "#{links.first.Twitter}",   "#{links.first.Twitter}"%>   </h3>
+   <h3>LinkedIn <%= link_to "#{links.first.LinkedIn}",  "#{links.first.LinkedIn}"%>  </h3>
    <a href="#">Edit</a>
-   <a href="#">Delete</a>
-   <hr>
-<% end %>
+   <br>
+  <% end %>

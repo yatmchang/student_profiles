@@ -118,3 +118,10 @@ footer a:hover {
   text-align: center;
   padding-top: 15px;
 }
+
+.link-icon {
+  color: #333333;
+  margin-left: 15px;
+  font-size: 40px;
+  margin-right: 15px;
+}

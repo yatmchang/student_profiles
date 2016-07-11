@@ -29,7 +29,7 @@ class LinksController < ApplicationController
   private
 
   def link_params
-    params.require(:link).permit(:title, :href)
+    params.require(:link).permit(:Github, :Twitter, :LinkedIn)
   end
 
   def find_link
