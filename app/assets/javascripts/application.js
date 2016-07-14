@@ -45,20 +45,20 @@ $(document).ready(function(){
 
   $("span.admin").click(function(){$(this).hide()})
 
-  $(".edu-del-link").click(function(){
+  $(".delete-link").click(function(){
     var user = $(this).data("user");
     var profile = $(this).data("profile");
-    var education = $(this).data("id");
+    var table = $(this).data("id");
+    var type = $(this).data("type");
     var that = $(this);
-    console.log('/users/' + user + "/" + profile + "/" + education);
     $.ajax({
       method: "DELETE",
-      url: '/users/' + user + "/profiles/" + profile + "/educations/" + education + ".json",
+      url: '/users/' + user + "/profiles/" + profile + "/" + type + "s/" + table + ".json",
       error: function(){
         alert("nope");
       },
       success: function(){
-        that.fade(500);
+        that.parent().fadeOut(500);
       }
     })
   }) 

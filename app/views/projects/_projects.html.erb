@@ -1,12 +1,14 @@
 
 <% projects.each do |project| %>
+  <div>
   <h3>title: <%= project.title %></h3>
   <h3>description: <%= project.description %></h3>
   <h3>web_app_link: <%= project.web_app_link %></h3>
   <h3>github_link: <%= project.github_link %></h3>
   <%= image_tag project.logo.url(:medium) %>
   <p>Tags: <%= project.project_tags.map {|t| t.title.capitalize }.join(", ") %></p>
-   <a href="#">Edit</a>
-   <a href="#">Delete</a>
-   <hr>
+   <a class='edit-link' data-id='<%= project.id %>', data-user='<%= @user.id %>', data-profile='<%= @profile.id %>' data-type='project'  href="#">Edit</a>
+    <a class='delete-link' data-id='<%= project.id %>', data-user='<%= @user.id %>', data-profile='<%= @profile.id %>' data-type="project" href="#">Delete</a>
+    <hr>
+  </div>
 <% end %>

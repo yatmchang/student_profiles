@@ -38,7 +38,10 @@ class SkillsController < ApplicationController
 
   def destroy
     @skill.destroy
-    redirect_to new_skill_path, notice: "Your skill information has been deleted"
+    respond_to do |format|
+      format.html {redirect_to edit_user_path}
+      format.json { head :no_content}
+    end
   end
 
   def update

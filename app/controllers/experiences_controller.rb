@@ -33,7 +33,10 @@ class ExperiencesController < ApplicationController
 
   def destroy
     @experience.destroy
-    redirect_to edit_user_path(current_user)
+    respond_to do |format|
+      format.html {redirect_to edit_user_path(current_user)}
+      format.json { head :no_content }
+    end
   end
 
   private
