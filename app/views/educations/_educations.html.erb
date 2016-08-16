@@ -4,7 +4,7 @@
   <h3>School Web: <%= education.link %></h3>
   <%= image_tag education.logo.url(:medium) %>
 
-   <a href="#">Edit</a>
-   <a href="#">Delete</a>
+  <a data-id='<%= education.id %>' href="#">Edit</a>
+  <a data-id='<%= education.id %>'href="#">Delete</a>
    <hr>
 <% end %>

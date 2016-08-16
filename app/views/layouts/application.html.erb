@@ -15,6 +15,7 @@
     <% else %>
     <% @users = User.all %>
     <% end %>
+
     $('#search-form').bind("keyup", function(){
     $('.render').html("<%= j render :partial => 'users/users', :object => @users %>");
     var searchTerm = $(this).val().toLowerCase();
